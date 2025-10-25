@@ -1,0 +1,602 @@
+{
+  "PHP Class": {
+    "prefix": "class",
+    "description": "PHP Class template",
+    "body": [
+      "<?php",
+      "",
+      "namespace ${1:App};",
+      "",
+      "class ${2:ClassName}",
+      "{",
+      "    ${3:// Properties and methods}",
+      "}"
+    ]
+  },
+  "Laravel Controller": {
+    "prefix": "controller",
+    "description": "Laravel Controller template",
+    "body": [
+      "<?php",
+      "",
+      "namespace App\\Http\\Controllers;",
+      "",
+      "use Illuminate\\Http\\Request;",
+      "",
+      "class ${1:ControllerName}Controller extends Controller",
+      "{",
+      "    /**",
+      "     * Display a listing of the resource.",
+      "     */",
+      "    public function index()",
+      "    {",
+      "        ${2://}",
+      "    }",
+      "",
+      "    /**",
+      "     * Store a newly created resource in storage.",
+      "     */",
+      "    public function store(Request \\$request)",
+      "    {",
+      "        ${3://}",
+      "    }",
+      "",
+      "    /**",
+      "     * Display the specified resource.",
+      "     */",
+      "    public function show(string \\$id)",
+      "    {",
+      "        ${4://}",
+      "    }",
+      "",
+      "    /**",
+      "     * Update the specified resource in storage.",
+      "     */",
+      "    public function update(Request \\$request, string \\$id)",
+      "    {",
+      "        ${5://}",
+      "    }",
+      "",
+      "    /**",
+      "     * Remove the specified resource from storage.",
+      "     */",
+      "    public function destroy(string \\$id)",
+      "    {",
+      "        ${6://}",
+      "    }",
+      "}"
+    ]
+  },
+  "Laravel Model": {
+    "prefix": "model",
+    "description": "Laravel Model template",
+    "body": [
+      "<?php",
+      "",
+      "namespace App\\Models;",
+      "",
+      "use Illuminate\\Database\\Eloquent\\Factories\\HasFactory;",
+      "use Illuminate\\Database\\Eloquent\\Model;",
+      "",
+      "class ${1:ModelName} extends Model",
+      "{",
+      "    use HasFactory;",
+      "",
+      "    protected \\$fillable = [",
+      "        ${2:'column1', 'column2'}",
+      "    ];",
+      "",
+      "    protected \\$casts = [",
+      "        ${3://}",
+      "    ];",
+      "}"
+    ]
+  },
+  "Laravel Migration": {
+    "prefix": "migration",
+    "description": "Laravel Migration template",
+    "body": [
+      "<?php",
+      "",
+      "use Illuminate\\Database\\Migrations\\Migration;",
+      "use Illuminate\\Database\\Schema\\Blueprint;",
+      "use Illuminate\\Support\\Facades\\Schema;",
+      "",
+      "return new class extends Migration",
+      "{",
+      "    /**",
+      "     * Run the migrations.",
+      "     */",
+      "    public function up(): void",
+      "    {",
+      "        Schema::create('${1:table_name}', function (Blueprint \\$table) {",
+      "            \\$table->id();",
+      "            ${2://}",
+      "            \\$table->timestamps();",
+      "        });",
+      "    }",
+      "",
+      "    /**",
+      "     * Reverse the migrations.",
+      "     */",
+      "    public function down(): void",
+      "    {",
+      "        Schema::dropIfExists('${1:table_name}');",
+      "    }",
+      "};"
+    ]
+  },
+  "Laravel Request": {
+    "prefix": "request",
+    "description": "Laravel Form Request template",
+    "body": [
+      "<?php",
+      "",
+      "namespace App\\Http\\Requests;",
+      "",
+      "use Illuminate\\Foundation\\Http\\FormRequest;",
+      "",
+      "class ${1:RequestName}Request extends FormRequest",
+      "{",
+      "    /**",
+      "     * Determine if the user is authorized to make this request.",
+      "     */",
+      "    public function authorize(): bool",
+      "    {",
+      "        return ${2:true};",
+      "    }",
+      "",
+      "    /**",
+      "     * Get the validation rules that apply to the request.",
+      "     */",
+      "    public function rules(): array",
+      "    {",
+      "        return [",
+      "            ${3:'field' => 'required|string'}",
+      "        ];",
+      "    }",
+      "}"
+    ]
+  },
+  "Laravel Resource": {
+    "prefix": "resource",
+    "description": "Laravel API Resource template",
+    "body": [
+      "<?php",
+      "",
+      "namespace App\\Http\\Resources;",
+      "",
+      "use Illuminate\\Http\\Request;",
+      "use Illuminate\\Http\\Resources\\Json\\JsonResource;",
+      "",
+      "class ${1:ResourceName}Resource extends JsonResource",
+      "{",
+      "    /**",
+      "     * Transform the resource into an array.",
+      "     */",
+      "    public function toArray(Request \\$request): array",
+      "    {",
+      "        return [",
+      "            'id' => \\$this->id,",
+      "            ${2://}",
+      "            'created_at' => \\$this->created_at,",
+      "            'updated_at' => \\$this->updated_at,",
+      "        ];",
+      "    }",
+      "}"
+    ]
+  },
+  "Laravel Middleware": {
+    "prefix": "middleware",
+    "description": "Laravel Middleware template",
+    "body": [
+      "<?php",
+      "",
+      "namespace App\\Http\\Middleware;",
+      "",
+      "use Closure;",
+      "use Illuminate\\Http\\Request;",
+      "use Symfony\\Component\\HttpFoundation\\Response;",
+      "",
+      "class ${1:MiddlewareName}",
+      "{",
+      "    /**",
+      "     * Handle an incoming request.",
+      "     */",
+      "    public function handle(Request \\$request, Closure \\$next): Response",
+      "    {",
+      "        ${2://}",
+      "",
+      "        return \\$next(\\$request);",
+      "    }",
+      "}"
+    ]
+  },
+  "Laravel Service": {
+    "prefix": "service",
+    "description": "Laravel Service class template",
+    "body": [
+      "<?php",
+      "",
+      "namespace App\\Services;",
+      "",
+      "class ${1:ServiceName}Service",
+      "{",
+      "    public function __construct()",
+      "    {",
+      "        ${2://}",
+      "    }",
+      "",
+      "    ${3:// Service methods}",
+      "}"
+    ]
+  },
+  "Laravel Job": {
+    "prefix": "job",
+    "description": "Laravel Queue Job template",
+    "body": [
+      "<?php",
+      "",
+      "namespace App\\Jobs;",
+      "",
+      "use Illuminate\\Bus\\Queueable;",
+      "use Illuminate\\Contracts\\Queue\\ShouldQueue;",
+      "use Illuminate\\Foundation\\Bus\\Dispatchable;",
+      "use Illuminate\\Queue\\InteractsWithQueue;",
+      "use Illuminate\\Queue\\SerializesModels;",
+      "",
+      "class ${1:JobName} implements ShouldQueue",
+      "{",
+      "    use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;",
+      "",
+      "    /**",
+      "     * Create a new job instance.",
+      "     */",
+      "    public function __construct()",
+      "    {",
+      "        ${2://}",
+      "    }",
+      "",
+      "    /**",
+      "     * Execute the job.",
+      "     */",
+      "    public function handle(): void",
+      "    {",
+      "        ${3://}",
+      "    }",
+      "}"
+    ]
+  },
+  "Laravel Event": {
+    "prefix": "event",
+    "description": "Laravel Event template",
+    "body": [
+      "<?php",
+      "",
+      "namespace App\\Events;",
+      "",
+      "use Illuminate\\Broadcasting\\InteractsWithSockets;",
+      "use Illuminate\\Foundation\\Events\\Dispatchable;",
+      "use Illuminate\\Queue\\SerializesModels;",
+      "",
+      "class ${1:EventName}",
+      "{",
+      "    use Dispatchable, InteractsWithSockets, SerializesModels;",
+      "",
+      "    /**",
+      "     * Create a new event instance.",
+      "     */",
+      "    public function __construct()",
+      "    {",
+      "        ${2://}",
+      "    }",
+      "}"
+    ]
+  },
+  "Laravel Listener": {
+    "prefix": "listener",
+    "description": "Laravel Event Listener template",
+    "body": [
+      "<?php",
+      "",
+      "namespace App\\Listeners;",
+      "",
+      "use ${1:App\\Events\\EventName};",
+      "use Illuminate\\Contracts\\Queue\\ShouldQueue;",
+      "use Illuminate\\Queue\\InteractsWithQueue;",
+      "",
+      "class ${2:ListenerName}",
+      "{",
+      "    /**",
+      "     * Create the event listener.",
+      "     */",
+      "    public function __construct()",
+      "    {",
+      "        ${3://}",
+      "    }",
+      "",
+      "    /**",
+      "     * Handle the event.",
+      "     */",
+      "    public function handle(${1:EventName} \\$event): void",
+      "    {",
+      "        ${4://}",
+      "    }",
+      "}"
+    ]
+  },
+  "Laravel Test": {
+    "prefix": "test",
+    "description": "Laravel Test template",
+    "body": [
+      "<?php",
+      "",
+      "namespace Tests\\Feature;",
+      "",
+      "use Tests\\TestCase;",
+      "use Illuminate\\Foundation\\Testing\\RefreshDatabase;",
+      "",
+      "class ${1:TestName}Test extends TestCase",
+      "{",
+      "    use RefreshDatabase;",
+      "",
+      "    /**",
+      "     * Test ${2:description}.",
+      "     */",
+      "    public function test_${3:function_name}(): void",
+      "    {",
+      "        ${4://}",
+      "",
+      "        \\$this->assertTrue(true);",
+      "    }",
+      "}"
+    ]
+  },
+  "Laravel Factory": {
+    "prefix": "factory",
+    "description": "Laravel Factory template",
+    "body": [
+      "<?php",
+      "",
+      "namespace Database\\Factories;",
+      "",
+      "use Illuminate\\Database\\Eloquent\\Factories\\Factory;",
+      "",
+      "/**",
+      " * @extends \\Illuminate\\Database\\Eloquent\\Factories\\Factory<\\App\\Models\\${1:ModelName}>",
+      " */",
+      "class ${1:ModelName}Factory extends Factory",
+      "{",
+      "    /**",
+      "     * Define the model's default state.",
+      "     */",
+      "    public function definition(): array",
+      "    {",
+      "        return [",
+      "            ${2://}",
+      "        ];",
+      "    }",
+      "}"
+    ]
+  },
+  "Laravel Seeder": {
+    "prefix": "seeder",
+    "description": "Laravel Seeder template",
+    "body": [
+      "<?php",
+      "",
+      "namespace Database\\Seeders;",
+      "",
+      "use Illuminate\\Database\\Seeder;",
+      "",
+      "class ${1:SeederName}Seeder extends Seeder",
+      "{",
+      "    /**",
+      "     * Run the database seeds.",
+      "     */",
+      "    public function run(): void",
+      "    {",
+      "        ${2://}",
+      "    }",
+      "}"
+    ]
+  },
+  "Laravel Route": {
+    "prefix": "route",
+    "description": "Laravel Route definition",
+    "body": [
+      "Route::${1|get,post,put,patch,delete|}('${2:/path}', [${3:Controller}::class, '${4:method}']);"
+    ]
+  },
+  "Laravel Route Resource": {
+    "prefix": "routeresource",
+    "description": "Laravel Resource Route",
+    "body": [
+      "Route::resource('${1:resource}', ${2:Controller}::class);"
+    ]
+  },
+  "Laravel Validation": {
+    "prefix": "validate",
+    "description": "Request validation",
+    "body": [
+      "\\$validated = \\$request->validate([",
+      "    '${1:field}' => '${2:required|string}',",
+      "]);"
+    ]
+  },
+  "Eloquent Query": {
+    "prefix": "query",
+    "description": "Basic Eloquent query",
+    "body": [
+      "${1:Model}::${2|all,find,where,first,get|}(${3:});"
+    ]
+  },
+  "Eloquent Relationship HasMany": {
+    "prefix": "hasmany",
+    "description": "HasMany relationship",
+    "body": [
+      "public function ${1:relation}()",
+      "{",
+      "    return \\$this->hasMany(${2:RelatedModel}::class);",
+      "}"
+    ]
+  },
+  "Eloquent Relationship BelongsTo": {
+    "prefix": "belongsto",
+    "description": "BelongsTo relationship",
+    "body": [
+      "public function ${1:relation}()",
+      "{",
+      "    return \\$this->belongsTo(${2:RelatedModel}::class);",
+      "}"
+    ]
+  },
+  "Eloquent Relationship BelongsToMany": {
+    "prefix": "belongstomany",
+    "description": "BelongsToMany relationship",
+    "body": [
+      "public function ${1:relation}()",
+      "{",
+      "    return \\$this->belongsToMany(${2:RelatedModel}::class);",
+      "}"
+    ]
+  },
+  "PHP Function": {
+    "prefix": "function",
+    "description": "PHP function template",
+    "body": [
+      "function ${1:functionName}(${2:}): ${3:void}",
+      "{",
+      "    ${4://}",
+      "}"
+    ]
+  },
+  "PHP Method": {
+    "prefix": "method",
+    "description": "PHP method template",
+    "body": [
+      "${1|public,protected,private|} function ${2:methodName}(${3:}): ${4:void}",
+      "{",
+      "    ${5://}",
+      "}"
+    ]
+  },
+  "PHP DocBlock": {
+    "prefix": "doc",
+    "description": "PHP DocBlock comment",
+    "body": [
+      "/**",
+      " * ${1:Description}",
+      " *",
+      " * @param ${2:type} \\$${3:param}",
+      " * @return ${4:type}",
+      " */"
+    ]
+  },
+  "Laravel dd": {
+    "prefix": "dd",
+    "description": "Dump and Die",
+    "body": [
+      "dd(${1:\\$variable});"
+    ]
+  },
+  "Laravel dump": {
+    "prefix": "dump",
+    "description": "Dump variable",
+    "body": [
+      "dump(${1:\\$variable});"
+    ]
+  },
+  "Try Catch": {
+    "prefix": "try",
+    "description": "Try-catch block",
+    "body": [
+      "try {",
+      "    ${1://}",
+      "} catch (${2:Exception} \\$e) {",
+      "    ${3://}",
+      "}"
+    ]
+  },
+  "Laravel Policy": {
+    "prefix": "policy",
+    "description": "Laravel Policy template",
+    "body": [
+      "<?php",
+      "",
+      "namespace App\\Policies;",
+      "",
+      "use App\\Models\\${1:Model};",
+      "use App\\Models\\User;",
+      "",
+      "class ${1:Model}Policy",
+      "{",
+      "    /**",
+      "     * Determine whether the user can view the model.",
+      "     */",
+      "    public function view(User \\$user, ${1:Model} \\$${2:model}): bool",
+      "    {",
+      "        ${3:return true;}",
+      "    }",
+      "",
+      "    /**",
+      "     * Determine whether the user can create models.",
+      "     */",
+      "    public function create(User \\$user): bool",
+      "    {",
+      "        ${4:return true;}",
+      "    }",
+      "",
+      "    /**",
+      "     * Determine whether the user can update the model.",
+      "     */",
+      "    public function update(User \\$user, ${1:Model} \\$${2:model}): bool",
+      "    {",
+      "        ${5:return true;}",
+      "    }",
+      "",
+      "    /**",
+      "     * Determine whether the user can delete the model.",
+      "     */",
+      "    public function delete(User \\$user, ${1:Model} \\$${2:model}): bool",
+      "    {",
+      "        ${6:return true;}",
+      "    }",
+      "}"
+    ]
+  },
+  "Laravel Command": {
+    "prefix": "command",
+    "description": "Laravel Artisan Command template",
+    "body": [
+      "<?php",
+      "",
+      "namespace App\\Console\\Commands;",
+      "",
+      "use Illuminate\\Console\\Command;",
+      "",
+      "class ${1:CommandName} extends Command",
+      "{",
+      "    /**",
+      "     * The name and signature of the console command.",
+      "     */",
+      "    protected \\$signature = '${2:command:name}';",
+      "",
+      "    /**",
+      "     * The console command description.",
+      "     */",
+      "    protected \\$description = '${3:Command description}';",
+      "",
+      "    /**",
+      "     * Execute the console command.",
+      "     */",
+      "    public function handle()",
+      "    {",
+      "        ${4://}",
+      "",
+      "        return Command::SUCCESS;",
+      "    }",
+      "}"
+    ]
+  }
+}

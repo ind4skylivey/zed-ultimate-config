@@ -1,0 +1,541 @@
+{
+  "Main Function": {
+    "prefix": "main",
+    "description": "Main function entry point",
+    "body": [
+      "fn main() {",
+      "    ${1:println!(\"Hello, world!\");}",
+      "}"
+    ]
+  },
+  "Function": {
+    "prefix": "fn",
+    "description": "Function definition",
+    "body": [
+      "fn ${1:function_name}(${2:}) -> ${3:()}) {",
+      "    ${4:todo!()}",
+      "}"
+    ]
+  },
+  "Public Function": {
+    "prefix": "pfn",
+    "description": "Public function definition",
+    "body": [
+      "pub fn ${1:function_name}(${2:}) -> ${3:()}) {",
+      "    ${4:todo!()}",
+      "}"
+    ]
+  },
+  "Async Function": {
+    "prefix": "afn",
+    "description": "Async function definition",
+    "body": [
+      "async fn ${1:function_name}(${2:}) -> ${3:()}) {",
+      "    ${4:todo!()}",
+      "}"
+    ]
+  },
+  "Struct": {
+    "prefix": "struct",
+    "description": "Struct definition",
+    "body": [
+      "struct ${1:StructName} {",
+      "    ${2:field}: ${3:Type},",
+      "}"
+    ]
+  },
+  "Public Struct": {
+    "prefix": "pstruct",
+    "description": "Public struct definition",
+    "body": [
+      "pub struct ${1:StructName} {",
+      "    pub ${2:field}: ${3:Type},",
+      "}"
+    ]
+  },
+  "Struct with Derive": {
+    "prefix": "dstruct",
+    "description": "Struct with common derives",
+    "body": [
+      "#[derive(Debug, Clone, PartialEq)]",
+      "pub struct ${1:StructName} {",
+      "    pub ${2:field}: ${3:Type},",
+      "}"
+    ]
+  },
+  "Enum": {
+    "prefix": "enum",
+    "description": "Enum definition",
+    "body": [
+      "enum ${1:EnumName} {",
+      "    ${2:Variant1},",
+      "    ${3:Variant2},",
+      "}"
+    ]
+  },
+  "Public Enum": {
+    "prefix": "penum",
+    "description": "Public enum definition",
+    "body": [
+      "pub enum ${1:EnumName} {",
+      "    ${2:Variant1},",
+      "    ${3:Variant2},",
+      "}"
+    ]
+  },
+  "Enum with Derive": {
+    "prefix": "denum",
+    "description": "Enum with common derives",
+    "body": [
+      "#[derive(Debug, Clone, PartialEq)]",
+      "pub enum ${1:EnumName} {",
+      "    ${2:Variant1},",
+      "    ${3:Variant2},",
+      "}"
+    ]
+  },
+  "Trait": {
+    "prefix": "trait",
+    "description": "Trait definition",
+    "body": [
+      "trait ${1:TraitName} {",
+      "    fn ${2:method_name}(&self${3:}) -> ${4:()};",
+      "}"
+    ]
+  },
+  "Public Trait": {
+    "prefix": "ptrait",
+    "description": "Public trait definition",
+    "body": [
+      "pub trait ${1:TraitName} {",
+      "    fn ${2:method_name}(&self${3:}) -> ${4:()};",
+      "}"
+    ]
+  },
+  "Impl Block": {
+    "prefix": "impl",
+    "description": "Implementation block",
+    "body": [
+      "impl ${1:StructName} {",
+      "    ${2:// methods}",
+      "}"
+    ]
+  },
+  "Trait Impl": {
+    "prefix": "implt",
+    "description": "Trait implementation",
+    "body": [
+      "impl ${1:TraitName} for ${2:StructName} {",
+      "    ${3:// trait methods}",
+      "}"
+    ]
+  },
+  "New Constructor": {
+    "prefix": "new",
+    "description": "New constructor method",
+    "body": [
+      "pub fn new(${1:args}) -> Self {",
+      "    Self {",
+      "        ${2:fields}",
+      "    }",
+      "}"
+    ]
+  },
+  "Match Expression": {
+    "prefix": "match",
+    "description": "Match expression",
+    "body": [
+      "match ${1:expression} {",
+      "    ${2:pattern} => ${3:result},",
+      "    _ => ${4:default},",
+      "}"
+    ]
+  },
+  "If Let": {
+    "prefix": "iflet",
+    "description": "If let expression",
+    "body": [
+      "if let ${1:Some(value)} = ${2:expression} {",
+      "    ${3:// use value}",
+      "}"
+    ]
+  },
+  "While Let": {
+    "prefix": "whilelet",
+    "description": "While let loop",
+    "body": [
+      "while let ${1:Some(value)} = ${2:expression} {",
+      "    ${3:// use value}",
+      "}"
+    ]
+  },
+  "For Loop": {
+    "prefix": "for",
+    "description": "For loop",
+    "body": [
+      "for ${1:item} in ${2:iterator} {",
+      "    ${3:// use item}",
+      "}"
+    ]
+  },
+  "Loop": {
+    "prefix": "loop",
+    "description": "Infinite loop",
+    "body": [
+      "loop {",
+      "    ${1:// loop body}",
+      "}"
+    ]
+  },
+  "Result Type": {
+    "prefix": "result",
+    "description": "Result return type",
+    "body": [
+      "Result<${1:T}, ${2:E}>"
+    ]
+  },
+  "Option Type": {
+    "prefix": "option",
+    "description": "Option return type",
+    "body": [
+      "Option<${1:T}>"
+    ]
+  },
+  "Box Type": {
+    "prefix": "box",
+    "description": "Box heap allocation",
+    "body": [
+      "Box<${1:T}>"
+    ]
+  },
+  "Vec Type": {
+    "prefix": "vec",
+    "description": "Vector type",
+    "body": [
+      "Vec<${1:T}>"
+    ]
+  },
+  "HashMap": {
+    "prefix": "hashmap",
+    "description": "HashMap import and usage",
+    "body": [
+      "use std::collections::HashMap;",
+      "",
+      "let mut ${1:map}: HashMap<${2:K}, ${3:V}> = HashMap::new();"
+    ]
+  },
+  "Print": {
+    "prefix": "println",
+    "description": "Print with newline",
+    "body": [
+      "println!(\"${1:{}}\", ${2:value});"
+    ]
+  },
+  "Debug Print": {
+    "prefix": "dbg",
+    "description": "Debug print macro",
+    "body": [
+      "dbg!(${1:expression});"
+    ]
+  },
+  "Error Handling": {
+    "prefix": "error",
+    "description": "Error type definition",
+    "body": [
+      "use std::error::Error;",
+      "",
+      "#[derive(Debug)]",
+      "pub enum ${1:ErrorName} {",
+      "    ${2:VariantOne},",
+      "    ${3:VariantTwo}(String),",
+      "}",
+      "",
+      "impl std::fmt::Display for ${1:ErrorName} {",
+      "    fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {",
+      "        match self {",
+      "            ${1:ErrorName}::${2:VariantOne} => write!(f, \"${4:error message}\"),",
+      "            ${1:ErrorName}::${3:VariantTwo}(msg) => write!(f, \"{}\", msg),",
+      "        }",
+      "    }",
+      "}",
+      "",
+      "impl Error for ${1:ErrorName} {}"
+    ]
+  },
+  "Test Module": {
+    "prefix": "testmod",
+    "description": "Test module",
+    "body": [
+      "#[cfg(test)]",
+      "mod tests {",
+      "    use super::*;",
+      "",
+      "    #[test]",
+      "    fn ${1:test_name}() {",
+      "        ${2:assert_eq!(true, true);}",
+      "    }",
+      "}"
+    ]
+  },
+  "Test Function": {
+    "prefix": "test",
+    "description": "Test function",
+    "body": [
+      "#[test]",
+      "fn ${1:test_name}() {",
+      "    ${2:assert_eq!(true, true);}",
+      "}"
+    ]
+  },
+  "Async Test": {
+    "prefix": "atest",
+    "description": "Async test with tokio",
+    "body": [
+      "#[tokio::test]",
+      "async fn ${1:test_name}() {",
+      "    ${2:assert_eq!(true, true);}",
+      "}"
+    ]
+  },
+  "Benchmark": {
+    "prefix": "bench",
+    "description": "Benchmark function",
+    "body": [
+      "#[bench]",
+      "fn ${1:bench_name}(b: &mut Bencher) {",
+      "    b.iter(|| {",
+      "        ${2:// code to benchmark}",
+      "    });",
+      "}"
+    ]
+  },
+  "Module": {
+    "prefix": "mod",
+    "description": "Module declaration",
+    "body": [
+      "mod ${1:module_name} {",
+      "    ${2:// module content}",
+      "}"
+    ]
+  },
+  "Use Statement": {
+    "prefix": "use",
+    "description": "Use/import statement",
+    "body": [
+      "use ${1:std}::${2:module};"
+    ]
+  },
+  "Derive": {
+    "prefix": "derive",
+    "description": "Derive attribute",
+    "body": [
+      "#[derive(${1|Debug,Clone,Copy,PartialEq,Eq,Hash,Default,Serialize,Deserialize|})]"
+    ]
+  },
+  "Closure": {
+    "prefix": "closure",
+    "description": "Closure definition",
+    "body": [
+      "|${1:args}| ${2:expression}"
+    ]
+  },
+  "Unwrap or Default": {
+    "prefix": "unwrapor",
+    "description": "Unwrap or default value",
+    "body": [
+      "${1:option}.unwrap_or(${2:default})"
+    ]
+  },
+  "Question Mark": {
+    "prefix": "try",
+    "description": "Try/question mark operator",
+    "body": [
+      "${1:expression}?"
+    ]
+  },
+  "From Trait": {
+    "prefix": "from",
+    "description": "From trait implementation",
+    "body": [
+      "impl From<${1:SourceType}> for ${2:TargetType} {",
+      "    fn from(value: ${1:SourceType}) -> Self {",
+      "        ${3:// conversion logic}",
+      "    }",
+      "}"
+    ]
+  },
+  "Display Trait": {
+    "prefix": "display",
+    "description": "Display trait implementation",
+    "body": [
+      "impl std::fmt::Display for ${1:TypeName} {",
+      "    fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {",
+      "        write!(f, \"${2:{}}\", self.${3:field})",
+      "    }",
+      "}"
+    ]
+  },
+  "Iterator": {
+    "prefix": "iter",
+    "description": "Iterator trait implementation",
+    "body": [
+      "impl Iterator for ${1:TypeName} {",
+      "    type Item = ${2:ItemType};",
+      "",
+      "    fn next(&mut self) -> Option<Self::Item> {",
+      "        ${3:// iterator logic}",
+      "    }",
+      "}"
+    ]
+  },
+  "Tokio Main": {
+    "prefix": "tokio",
+    "description": "Tokio async main function",
+    "body": [
+      "#[tokio::main]",
+      "async fn main() {",
+      "    ${1:// async code}",
+      "}"
+    ]
+  },
+  "Macro Rules": {
+    "prefix": "macro",
+    "description": "Declarative macro definition",
+    "body": [
+      "macro_rules! ${1:macro_name} {",
+      "    (${2:pattern}) => {",
+      "        ${3:// expansion}",
+      "    };",
+      "}"
+    ]
+  },
+  "Unsafe Block": {
+    "prefix": "unsafe",
+    "description": "Unsafe code block",
+    "body": [
+      "unsafe {",
+      "    ${1:// unsafe code}",
+      "}"
+    ]
+  },
+  "Raw Pointer": {
+    "prefix": "rawptr",
+    "description": "Raw pointer declaration",
+    "body": [
+      "let ${1:ptr}: *${2|const,mut|} ${3:Type} = ${4:expression};"
+    ]
+  },
+  "FFI Extern": {
+    "prefix": "extern",
+    "description": "FFI extern block",
+    "body": [
+      "extern \"C\" {",
+      "    fn ${1:function_name}(${2:args}) -> ${3:ReturnType};",
+      "}"
+    ]
+  },
+  "Mutex": {
+    "prefix": "mutex",
+    "description": "Mutex usage",
+    "body": [
+      "use std::sync::Mutex;",
+      "",
+      "let ${1:mutex} = Mutex::new(${2:value});",
+      "let mut ${3:guard} = ${1:mutex}.lock().unwrap();"
+    ]
+  },
+  "Arc": {
+    "prefix": "arc",
+    "description": "Arc (atomic reference counting)",
+    "body": [
+      "use std::sync::Arc;",
+      "",
+      "let ${1:arc} = Arc::new(${2:value});"
+    ]
+  },
+  "Channel": {
+    "prefix": "channel",
+    "description": "MPSC channel",
+    "body": [
+      "use std::sync::mpsc;",
+      "",
+      "let (${1:tx}, ${2:rx}) = mpsc::channel();"
+    ]
+  },
+  "Thread Spawn": {
+    "prefix": "thread",
+    "description": "Spawn a new thread",
+    "body": [
+      "use std::thread;",
+      "",
+      "let ${1:handle} = thread::spawn(|| {",
+      "    ${2:// thread code}",
+      "});",
+      "",
+      "${1:handle}.join().unwrap();"
+    ]
+  },
+  "File Read": {
+    "prefix": "fread",
+    "description": "Read file to string",
+    "body": [
+      "use std::fs;",
+      "",
+      "let ${1:contents} = fs::read_to_string(\"${2:path}\")?"
+    ]
+  },
+  "File Write": {
+    "prefix": "fwrite",
+    "description": "Write string to file",
+    "body": [
+      "use std::fs;",
+      "",
+      "fs::write(\"${1:path}\", ${2:contents})?"
+    ]
+  },
+  "Serde Serialize": {
+    "prefix": "serialize",
+    "description": "Serialize with serde",
+    "body": [
+      "use serde::{Serialize, Deserialize};",
+      "",
+      "#[derive(Serialize, Deserialize)]",
+      "struct ${1:StructName} {",
+      "    ${2:field}: ${3:Type},",
+      "}"
+    ]
+  },
+  "Lazy Static": {
+    "prefix": "lazy",
+    "description": "Lazy static global variable",
+    "body": [
+      "use lazy_static::lazy_static;",
+      "",
+      "lazy_static! {",
+      "    static ref ${1:NAME}: ${2:Type} = ${3:value};",
+      "}"
+    ]
+  },
+  "Lifetime": {
+    "prefix": "lifetime",
+    "description": "Lifetime annotation",
+    "body": [
+      "<'${1:a}>"
+    ]
+  },
+  "Generic": {
+    "prefix": "generic",
+    "description": "Generic type parameter",
+    "body": [
+      "<${1:T}>"
+    ]
+  },
+  "Where Clause": {
+    "prefix": "where",
+    "description": "Where clause for trait bounds",
+    "body": [
+      "where",
+      "    ${1:T}: ${2:Trait},"
+    ]
+  }
+}

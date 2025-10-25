@@ -1,0 +1,872 @@
+[
+  {
+    "label": "r/python",
+    "command": "python3",
+    "args": ["$ZED_FILE"],
+    "use_new_terminal": false,
+    "allow_concurrent_runs": true
+  },
+  {
+    "label": "r/rust",
+    "command": "sh",
+    "args": ["-c", "clear; cargo run -q"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": true
+  },
+  {
+    "label": "rust/run",
+    "command": "cargo",
+    "args": ["run"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": true,
+    "allow_concurrent_runs": true,
+    "reveal": "always"
+  },
+  {
+    "label": "rust/run-release",
+    "command": "cargo",
+    "args": ["run", "--release"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": true,
+    "allow_concurrent_runs": true,
+    "reveal": "always"
+  },
+  {
+    "label": "rust/build",
+    "command": "cargo",
+    "args": ["build"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false
+  },
+  {
+    "label": "rust/build-release",
+    "command": "cargo",
+    "args": ["build", "--release"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false
+  },
+  {
+    "label": "rust/test",
+    "command": "cargo",
+    "args": ["test"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": true,
+    "allow_concurrent_runs": false,
+    "reveal": "always"
+  },
+  {
+    "label": "rust/test-verbose",
+    "command": "cargo",
+    "args": ["test", "--", "--nocapture"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": true,
+    "allow_concurrent_runs": false,
+    "reveal": "always"
+  },
+  {
+    "label": "rust/bench",
+    "command": "cargo",
+    "args": ["bench"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": true,
+    "allow_concurrent_runs": false,
+    "reveal": "always"
+  },
+  {
+    "label": "rust/check",
+    "command": "cargo",
+    "args": ["check"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": true
+  },
+  {
+    "label": "rust/clippy",
+    "command": "cargo",
+    "args": ["clippy", "--", "-D", "warnings"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": true
+  },
+  {
+    "label": "rust/clippy-fix",
+    "command": "cargo",
+    "args": ["clippy", "--fix", "--allow-dirty"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false
+  },
+  {
+    "label": "rust/format",
+    "command": "cargo",
+    "args": ["fmt"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false
+  },
+  {
+    "label": "rust/format-check",
+    "command": "cargo",
+    "args": ["fmt", "--", "--check"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": true
+  },
+  {
+    "label": "rust/doc",
+    "command": "cargo",
+    "args": ["doc", "--open"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false
+  },
+  {
+    "label": "rust/doc-no-deps",
+    "command": "cargo",
+    "args": ["doc", "--no-deps", "--open"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false
+  },
+  {
+    "label": "rust/clean",
+    "command": "cargo",
+    "args": ["clean"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false
+  },
+  {
+    "label": "rust/update",
+    "command": "cargo",
+    "args": ["update"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false
+  },
+  {
+    "label": "rust/tree",
+    "command": "cargo",
+    "args": ["tree"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": true
+  },
+  {
+    "label": "rust/audit",
+    "command": "cargo",
+    "args": ["audit"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": true
+  },
+  {
+    "label": "rust/outdated",
+    "command": "cargo",
+    "args": ["outdated"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": true
+  },
+  {
+    "label": "rust/expand",
+    "command": "cargo",
+    "args": ["expand"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": true,
+    "allow_concurrent_runs": true,
+    "reveal": "always"
+  },
+  {
+    "label": "rust/new-bin",
+    "command": "cargo",
+    "args": ["new", "${1:project_name}"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false
+  },
+  {
+    "label": "rust/new-lib",
+    "command": "cargo",
+    "args": ["new", "--lib", "${1:library_name}"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false
+  },
+  {
+    "label": "rust/add-dependency",
+    "command": "cargo",
+    "args": ["add", "${1:dependency}"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false
+  },
+  {
+    "label": "droid/analyze",
+    "command": "droid",
+    "args": ["exec", "Analyze the current file and provide insights: $ZED_FILE"],
+    "use_new_terminal": true,
+    "allow_concurrent_runs": true,
+    "reveal": "always"
+  },
+  {
+    "label": "droid/review",
+    "command": "droid",
+    "args": ["exec", "--auto", "low", "Review the code in $ZED_FILE for potential issues, best practices, and improvements"],
+    "use_new_terminal": true,
+    "allow_concurrent_runs": true,
+    "reveal": "always"
+  },
+  {
+    "label": "droid/fix",
+    "command": "droid",
+    "args": ["exec", "--auto", "medium", "Fix issues, format code, and improve $ZED_FILE"],
+    "use_new_terminal": true,
+    "allow_concurrent_runs": false,
+    "reveal": "always"
+  },
+  {
+    "label": "droid/test",
+    "command": "droid",
+    "args": ["exec", "--auto", "medium", "Run tests for the current project and fix any failures"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": true,
+    "allow_concurrent_runs": false,
+    "reveal": "always"
+  },
+  {
+    "label": "droid/docs",
+    "command": "droid",
+    "args": ["exec", "--auto", "low", "Add documentation and comments to $ZED_FILE"],
+    "use_new_terminal": true,
+    "allow_concurrent_runs": true,
+    "reveal": "always"
+  },
+  {
+    "label": "droid/refactor",
+    "command": "droid",
+    "args": ["exec", "--auto", "medium", "Refactor $ZED_FILE to improve code quality and maintainability"],
+    "use_new_terminal": true,
+    "allow_concurrent_runs": false,
+    "reveal": "always"
+  },
+  {
+    "label": "droid/interactive",
+    "command": "droid",
+    "args": [],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": true,
+    "allow_concurrent_runs": true,
+    "reveal": "always"
+  },
+  {
+    "label": "php/run",
+    "command": "php",
+    "args": ["$ZED_FILE"],
+    "use_new_terminal": false,
+    "allow_concurrent_runs": true
+  },
+  {
+    "label": "php/lint",
+    "command": "php",
+    "args": ["-l", "$ZED_FILE"],
+    "use_new_terminal": false,
+    "allow_concurrent_runs": true
+  },
+  {
+    "label": "php/format",
+    "command": "sh",
+    "args": ["-c", "PHP_CS_FIXER_IGNORE_ENV=1 php-cs-fixer fix \"$1\"", "--", "$ZED_FILE"],
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false
+  },
+  {
+    "label": "laravel/serve",
+    "command": "php",
+    "args": ["artisan", "serve"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": true,
+    "allow_concurrent_runs": false,
+    "reveal": "always"
+  },
+  {
+    "label": "laravel/migrate",
+    "command": "php",
+    "args": ["artisan", "migrate"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false
+  },
+  {
+    "label": "laravel/migrate-fresh",
+    "command": "php",
+    "args": ["artisan", "migrate:fresh", "--seed"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false
+  },
+  {
+    "label": "laravel/test",
+    "command": "php",
+    "args": ["artisan", "test"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": true,
+    "allow_concurrent_runs": false,
+    "reveal": "always"
+  },
+  {
+    "label": "laravel/test-parallel",
+    "command": "php",
+    "args": ["artisan", "test", "--parallel"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": true,
+    "allow_concurrent_runs": false,
+    "reveal": "always"
+  },
+  {
+    "label": "laravel/tinker",
+    "command": "php",
+    "args": ["artisan", "tinker"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": true,
+    "allow_concurrent_runs": true,
+    "reveal": "always"
+  },
+  {
+    "label": "laravel/queue-work",
+    "command": "php",
+    "args": ["artisan", "queue:work"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": true,
+    "allow_concurrent_runs": true,
+    "reveal": "always"
+  },
+  {
+    "label": "laravel/cache-clear",
+    "command": "php",
+    "args": ["artisan", "cache:clear"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false
+  },
+  {
+    "label": "laravel/config-clear",
+    "command": "php",
+    "args": ["artisan", "config:clear"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false
+  },
+  {
+    "label": "laravel/route-list",
+    "command": "php",
+    "args": ["artisan", "route:list"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": true
+  },
+  {
+    "label": "laravel/make-controller",
+    "command": "php",
+    "args": ["artisan", "make:controller", "${1:ControllerName}"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false
+  },
+  {
+    "label": "laravel/make-model",
+    "command": "php",
+    "args": ["artisan", "make:model", "${1:ModelName}", "-mfs"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false
+  },
+  {
+    "label": "laravel/make-migration",
+    "command": "php",
+    "args": ["artisan", "make:migration", "${1:migration_name}"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false
+  },
+  {
+    "label": "laravel/make-seeder",
+    "command": "php",
+    "args": ["artisan", "make:seeder", "${1:SeederName}"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false
+  },
+  {
+    "label": "laravel/make-factory",
+    "command": "php",
+    "args": ["artisan", "make:factory", "${1:FactoryName}"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false
+  },
+  {
+    "label": "laravel/make-request",
+    "command": "php",
+    "args": ["artisan", "make:request", "${1:RequestName}"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false
+  },
+  {
+    "label": "laravel/make-resource",
+    "command": "php",
+    "args": ["artisan", "make:resource", "${1:ResourceName}"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false
+  },
+  {
+    "label": "laravel/make-middleware",
+    "command": "php",
+    "args": ["artisan", "make:middleware", "${1:MiddlewareName}"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false
+  },
+  {
+    "label": "laravel/make-command",
+    "command": "php",
+    "args": ["artisan", "make:command", "${1:CommandName}"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false
+  },
+  {
+    "label": "laravel/make-job",
+    "command": "php",
+    "args": ["artisan", "make:job", "${1:JobName}"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false
+  },
+  {
+    "label": "laravel/make-event",
+    "command": "php",
+    "args": ["artisan", "make:event", "${1:EventName}"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false
+  },
+  {
+    "label": "laravel/make-listener",
+    "command": "php",
+    "args": ["artisan", "make:listener", "${1:ListenerName}"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false
+  },
+  {
+    "label": "laravel/make-policy",
+    "command": "php",
+    "args": ["artisan", "make:policy", "${1:PolicyName}"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false
+  },
+  {
+    "label": "laravel/optimize",
+    "command": "php",
+    "args": ["artisan", "optimize"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false
+  },
+  {
+    "label": "composer/install",
+    "command": "composer",
+    "args": ["install"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": true,
+    "allow_concurrent_runs": false,
+    "reveal": "always"
+  },
+  {
+    "label": "composer/update",
+    "command": "composer",
+    "args": ["update"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": true,
+    "allow_concurrent_runs": false,
+    "reveal": "always"
+  },
+  {
+    "label": "composer/dump-autoload",
+    "command": "composer",
+    "args": ["dump-autoload"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false
+  },
+  {
+    "label": "python/test",
+    "command": "sh",
+    "args": ["-c", "if [ -f venv/bin/pytest ]; then venv/bin/pytest tests/ -v; elif [ -f .venv/bin/pytest ]; then .venv/bin/pytest tests/ -v; else pytest tests/ -v || python3 -m pytest tests/ -v; fi"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": true,
+    "allow_concurrent_runs": false,
+    "reveal": "always"
+  },
+  {
+    "label": "python/test-coverage",
+    "command": "sh",
+    "args": ["-c", "pytest --cov=. --cov-report=html || python3 -m pytest --cov=. --cov-report=html"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": true,
+    "allow_concurrent_runs": false,
+    "reveal": "always"
+  },
+  {
+    "label": "python/test-file",
+    "command": "sh",
+    "args": ["-c", "pytest \"$1\" -v || python3 -m pytest \"$1\" -v", "--", "$ZED_FILE"],
+    "use_new_terminal": true,
+    "allow_concurrent_runs": true,
+    "reveal": "always"
+  },
+  {
+    "label": "python/lint-ruff",
+    "command": "sh",
+    "args": ["-c", "if [ -f venv/bin/ruff ]; then venv/bin/ruff check .; elif [ -f .venv/bin/ruff ]; then .venv/bin/ruff check .; else ruff check . || python3 -m ruff check .; fi"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": true
+  },
+  {
+    "label": "python/lint-ruff-fix",
+    "command": "sh",
+    "args": ["-c", "ruff check --fix . || python3 -m ruff check --fix ."],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false
+  },
+  {
+    "label": "python/format-black",
+    "command": "sh",
+    "args": ["-c", "if [ -f venv/bin/black ]; then venv/bin/black .; elif [ -f .venv/bin/black ]; then .venv/bin/black .; else black . || python3 -m black .; fi"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false
+  },
+  {
+    "label": "python/typecheck-mypy",
+    "command": "sh",
+    "args": ["-c", "if [ -f venv/bin/mypy ]; then venv/bin/mypy .; elif [ -f .venv/bin/mypy ]; then .venv/bin/mypy .; else mypy . || python3 -m mypy .; fi"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": true
+  },
+  {
+    "label": "python/venv-create",
+    "command": "python3",
+    "args": ["-m", "venv", "venv"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false
+  },
+  {
+    "label": "python/venv-activate",
+    "command": "sh",
+    "args": ["-c", "echo 'Source with: source venv/bin/activate'"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": true,
+    "allow_concurrent_runs": true,
+    "reveal": "always"
+  },
+  {
+    "label": "python/pip-install-dev",
+    "command": "sh",
+    "args": ["-c", "python3 -m pip install black pytest pytest-cov mypy ruff"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": true,
+    "allow_concurrent_runs": false,
+    "reveal": "always"
+  },
+  {
+    "label": "python/pip-install-requirements",
+    "command": "sh",
+    "args": ["-c", "python3 -m pip install -r requirements.txt || echo 'requirements.txt not found'"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": true,
+    "allow_concurrent_runs": false,
+    "reveal": "always"
+  },
+  {
+    "label": "python/pip-freeze",
+    "command": "sh",
+    "args": ["-c", "python3 -m pip freeze > requirements.txt && echo 'requirements.txt updated'"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false
+  },
+  {
+    "label": "binary/file-info",
+    "command": "file",
+    "args": ["$ZED_FILE"],
+    "use_new_terminal": false,
+    "allow_concurrent_runs": true
+  },
+  {
+    "label": "binary/strings",
+    "command": "strings",
+    "args": ["$ZED_FILE"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": true,
+    "allow_concurrent_runs": true,
+    "reveal": "always"
+  },
+  {
+    "label": "binary/strings-min",
+    "command": "strings",
+    "args": ["-n", "10", "$ZED_FILE"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": true,
+    "allow_concurrent_runs": true,
+    "reveal": "always"
+  },
+  {
+    "label": "binary/hexdump",
+    "command": "xxd",
+    "args": ["$ZED_FILE"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": true,
+    "allow_concurrent_runs": true,
+    "reveal": "always"
+  },
+  {
+    "label": "binary/hexdump-head",
+    "command": "sh",
+    "args": ["-c", "xxd \"$1\" | head -100", "--", "$ZED_FILE"],
+    "use_new_terminal": true,
+    "allow_concurrent_runs": true,
+    "reveal": "always"
+  },
+  {
+    "label": "binary/objdump-headers",
+    "command": "objdump",
+    "args": ["-h", "$ZED_FILE"],
+    "use_new_terminal": true,
+    "allow_concurrent_runs": true,
+    "reveal": "always"
+  },
+  {
+    "label": "binary/objdump-disasm",
+    "command": "objdump",
+    "args": ["-d", "$ZED_FILE"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": true,
+    "allow_concurrent_runs": true,
+    "reveal": "always"
+  },
+  {
+    "label": "binary/objdump-full",
+    "command": "objdump",
+    "args": ["-D", "-M", "intel", "$ZED_FILE"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": true,
+    "allow_concurrent_runs": true,
+    "reveal": "always"
+  },
+  {
+    "label": "binary/readelf-headers",
+    "command": "readelf",
+    "args": ["-h", "$ZED_FILE"],
+    "use_new_terminal": true,
+    "allow_concurrent_runs": true,
+    "reveal": "always"
+  },
+  {
+    "label": "binary/readelf-sections",
+    "command": "readelf",
+    "args": ["-S", "$ZED_FILE"],
+    "use_new_terminal": true,
+    "allow_concurrent_runs": true,
+    "reveal": "always"
+  },
+  {
+    "label": "binary/readelf-symbols",
+    "command": "readelf",
+    "args": ["-s", "$ZED_FILE"],
+    "use_new_terminal": true,
+    "allow_concurrent_runs": true,
+    "reveal": "always"
+  },
+  {
+    "label": "binary/nm-symbols",
+    "command": "nm",
+    "args": ["-C", "$ZED_FILE"],
+    "use_new_terminal": true,
+    "allow_concurrent_runs": true,
+    "reveal": "always"
+  },
+  {
+    "label": "binary/ldd-deps",
+    "command": "ldd",
+    "args": ["$ZED_FILE"],
+    "use_new_terminal": false,
+    "allow_concurrent_runs": true
+  },
+  {
+    "label": "binary/checksec",
+    "command": "sh",
+    "args": ["-c", "if command -v checksec >/dev/null; then checksec --file=\"$1\"; else readelf -l \"$1\" | grep -E 'GNU_STACK|GNU_RELRO'; fi", "--", "$ZED_FILE"],
+    "use_new_terminal": true,
+    "allow_concurrent_runs": true,
+    "reveal": "always"
+  },
+  {
+    "label": "binary/hash-md5",
+    "command": "md5sum",
+    "args": ["$ZED_FILE"],
+    "use_new_terminal": false,
+    "allow_concurrent_runs": true
+  },
+  {
+    "label": "binary/hash-sha256",
+    "command": "sha256sum",
+    "args": ["$ZED_FILE"],
+    "use_new_terminal": false,
+    "allow_concurrent_runs": true
+  },
+  {
+    "label": "binary/hash-all",
+    "command": "sh",
+    "args": ["-c", "echo 'MD5:'; md5sum \"$1\"; echo 'SHA1:'; sha1sum \"$1\"; echo 'SHA256:'; sha256sum \"$1\"", "--", "$ZED_FILE"],
+    "use_new_terminal": true,
+    "allow_concurrent_runs": true,
+    "reveal": "always"
+  },
+  {
+    "label": "debug/gdb-start",
+    "command": "sh",
+    "args": ["-c", "if command -v gdb >/dev/null; then gdb \"$1\"; else echo 'gdb not installed. Run: sudo pacman -S gdb'; fi", "--", "$ZED_FILE"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": true,
+    "allow_concurrent_runs": true,
+    "reveal": "always"
+  },
+  {
+    "label": "debug/strace",
+    "command": "sh",
+    "args": ["-c", "if command -v strace >/dev/null; then strace \"$1\"; else echo 'strace not installed. Run: sudo pacman -S strace'; fi", "--", "$ZED_FILE"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": true,
+    "allow_concurrent_runs": true,
+    "reveal": "always"
+  },
+  {
+    "label": "debug/ltrace",
+    "command": "sh",
+    "args": ["-c", "if command -v ltrace >/dev/null; then ltrace \"$1\"; else echo 'ltrace not installed. Run: sudo pacman -S ltrace'; fi", "--", "$ZED_FILE"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": true,
+    "allow_concurrent_runs": true,
+    "reveal": "always"
+  },
+  {
+    "label": "re/radare2",
+    "command": "sh",
+    "args": ["-c", "if command -v radare2 >/dev/null; then radare2 \"$1\"; else echo 'radare2 not installed. Run: sudo pacman -S radare2'; fi", "--", "$ZED_FILE"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": true,
+    "allow_concurrent_runs": true,
+    "reveal": "always"
+  },
+  {
+    "label": "re/ghidra",
+    "command": "sh",
+    "args": ["-c", "if command -v ghidra >/dev/null; then ghidra \"$1\"; else echo 'ghidra not installed. Install via AUR'; fi", "--", "$ZED_FILE"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": true,
+    "allow_concurrent_runs": true,
+    "reveal": "always"
+  },
+  {
+    "label": "network/netcat-listen",
+    "command": "sh",
+    "args": ["-c", "if command -v nc >/dev/null; then nc -lvnp ${1:4444}; else echo 'netcat not installed. Run: sudo pacman -S openbsd-netcat'; fi"],
+    "use_new_terminal": true,
+    "allow_concurrent_runs": true,
+    "reveal": "always"
+  },
+  {
+    "label": "network/netcat-connect",
+    "command": "sh",
+    "args": ["-c", "if command -v nc >/dev/null; then nc ${1:localhost} ${2:4444}; else echo 'netcat not installed. Run: sudo pacman -S openbsd-netcat'; fi"],
+    "use_new_terminal": true,
+    "allow_concurrent_runs": true,
+    "reveal": "always"
+  },
+  {
+    "label": "network/nmap-quick",
+    "command": "sh",
+    "args": ["-c", "if command -v nmap >/dev/null; then nmap ${1:localhost}; else echo 'nmap not installed. Run: sudo pacman -S nmap'; fi"],
+    "use_new_terminal": true,
+    "allow_concurrent_runs": true,
+    "reveal": "always"
+  },
+  {
+    "label": "network/nmap-stealth",
+    "command": "sh",
+    "args": ["-c", "if command -v nmap >/dev/null; then sudo nmap -sS ${1:localhost}; else echo 'nmap not installed. Run: sudo pacman -S nmap'; fi"],
+    "use_new_terminal": true,
+    "allow_concurrent_runs": true,
+    "reveal": "always"
+  },
+  {
+    "label": "network/wireshark",
+    "command": "sh",
+    "args": ["-c", "if command -v wireshark >/dev/null; then wireshark; else echo 'wireshark not installed. Run: sudo pacman -S wireshark-qt'; fi"],
+    "use_new_terminal": false,
+    "allow_concurrent_runs": true
+  },
+  {
+    "label": "exploit/generate-pattern",
+    "command": "sh",
+    "args": ["-c", "if command -v msf-pattern_create >/dev/null; then msf-pattern_create -l ${1:500}; else python3 -c \"import string; print((string.ascii_letters + string.digits) * 20)\"; fi"],
+    "use_new_terminal": true,
+    "allow_concurrent_runs": true,
+    "reveal": "always"
+  },
+  {
+    "label": "exploit/find-offset",
+    "command": "sh",
+    "args": ["-c", "if command -v msf-pattern_offset >/dev/null; then msf-pattern_offset -q ${1:0x41414141}; else echo 'metasploit not installed'; fi"],
+    "use_new_terminal": true,
+    "allow_concurrent_runs": true,
+    "reveal": "always"
+  },
+  {
+    "label": "forensics/binwalk",
+    "command": "sh",
+    "args": ["-c", "if command -v binwalk >/dev/null; then binwalk \"$1\"; else echo 'binwalk not installed. Run: sudo pacman -S binwalk'; fi", "--", "$ZED_FILE"],
+    "use_new_terminal": true,
+    "allow_concurrent_runs": true,
+    "reveal": "always"
+  },
+  {
+    "label": "forensics/foremost",
+    "command": "sh",
+    "args": ["-c", "if command -v foremost >/dev/null; then foremost -i \"$1\" -o foremost_output; else echo 'foremost not installed. Install via AUR'; fi", "--", "$ZED_FILE"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": true,
+    "allow_concurrent_runs": false,
+    "reveal": "always"
+  },
+  {
+    "label": "security/install-tools",
+    "command": "sh",
+    "args": ["-c", "echo 'Install security tools:\\nsudo pacman -S gdb strace ltrace radare2 nmap openbsd-netcat wireshark-qt binwalk\\n\\nOptional (AUR):\\nyay -S ghidra rizin-cutter foremost metasploit'"],
+    "use_new_terminal": true,
+    "allow_concurrent_runs": true,
+    "reveal": "always"
+  }
+]

