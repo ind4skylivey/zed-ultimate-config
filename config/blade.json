@@ -1,0 +1,303 @@
+{
+  "Blade Section": {
+    "prefix": "@section",
+    "description": "Define a section",
+    "body": [
+      "@section('${1:title}')",
+      "    ${2:content}",
+      "@endsection"
+    ]
+  },
+  "Blade Yield": {
+    "prefix": "@yield",
+    "description": "Display content of a section",
+    "body": "@yield('${1:section}')"
+  },
+  "Blade Extends": {
+    "prefix": "@extends",
+    "description": "Extend a layout",
+    "body": "@extends('${1:layouts.app}')"
+  },
+  "Blade Include": {
+    "prefix": "@include",
+    "description": "Include a partial view",
+    "body": "@include('${1:partials.header}')"
+  },
+  "Blade Foreach": {
+    "prefix": "@foreach",
+    "description": "Foreach loop",
+    "body": [
+      "@foreach (\\$${1:items} as \\$${2:item})",
+      "    ${3:// Content}",
+      "@endforeach"
+    ]
+  },
+  "Blade Forelse": {
+    "prefix": "@forelse",
+    "description": "Forelse loop with empty case",
+    "body": [
+      "@forelse (\\$${1:items} as \\$${2:item})",
+      "    ${3:// Content}",
+      "@empty",
+      "    ${4:// Empty state}",
+      "@endforelse"
+    ]
+  },
+  "Blade If": {
+    "prefix": "@if",
+    "description": "If statement",
+    "body": [
+      "@if (${1:condition})",
+      "    ${2:// Content}",
+      "@endif"
+    ]
+  },
+  "Blade If Else": {
+    "prefix": "@ifelse",
+    "description": "If-else statement",
+    "body": [
+      "@if (${1:condition})",
+      "    ${2:// True}",
+      "@else",
+      "    ${3:// False}",
+      "@endif"
+    ]
+  },
+  "Blade Unless": {
+    "prefix": "@unless",
+    "description": "Unless statement",
+    "body": [
+      "@unless (${1:condition})",
+      "    ${2:// Content}",
+      "@endunless"
+    ]
+  },
+  "Blade Auth": {
+    "prefix": "@auth",
+    "description": "Check if user is authenticated",
+    "body": [
+      "@auth",
+      "    ${1:// User is logged in}",
+      "@endauth"
+    ]
+  },
+  "Blade Guest": {
+    "prefix": "@guest",
+    "description": "Check if user is guest",
+    "body": [
+      "@guest",
+      "    ${1:// User is not logged in}",
+      "@endguest"
+    ]
+  },
+  "Blade Auth Else": {
+    "prefix": "@authelse",
+    "description": "Auth with else",
+    "body": [
+      "@auth",
+      "    ${1:// Logged in}",
+      "@else",
+      "    ${2:// Guest}",
+      "@endauth"
+    ]
+  },
+  "Blade Can": {
+    "prefix": "@can",
+    "description": "Check user permission",
+    "body": [
+      "@can('${1:update}', \\$${2:post})",
+      "    ${3:// User can update}",
+      "@endcan"
+    ]
+  },
+  "Blade Cannot": {
+    "prefix": "@cannot",
+    "description": "Check user cannot permission",
+    "body": [
+      "@cannot('${1:update}', \\$${2:post})",
+      "    ${3:// User cannot update}",
+      "@endcannot"
+    ]
+  },
+  "Blade Error": {
+    "prefix": "@error",
+    "description": "Display validation error",
+    "body": [
+      "@error('${1:email}')",
+      "    <span class=\"text-red-500\">{{ \\$message }}</span>",
+      "@enderror"
+    ]
+  },
+  "Blade Switch": {
+    "prefix": "@switch",
+    "description": "Switch statement",
+    "body": [
+      "@switch(\\$${1:variable})",
+      "    @case(${2:1})",
+      "        ${3:// First case}",
+      "        @break",
+      "    @case(${4:2})",
+      "        ${5:// Second case}",
+      "        @break",
+      "    @default",
+      "        ${6:// Default case}",
+      "@endswitch"
+    ]
+  },
+  "Blade Component": {
+    "prefix": "component",
+    "description": "Blade component",
+    "body": [
+      "<x-${1:alert} :type=\"${2:success}\">",
+      "    ${3:content}",
+      "</x-${1:alert}>"
+    ]
+  },
+  "Blade Slot": {
+    "prefix": "@slot",
+    "description": "Define a slot",
+    "body": [
+      "@slot('${1:title}')",
+      "    ${2:content}",
+      "@endslot"
+    ]
+  },
+  "Blade Props": {
+    "prefix": "@props",
+    "description": "Component props",
+    "body": "@props(['${1:type}' => '${2:default}'])"
+  },
+  "Blade Stack": {
+    "prefix": "@stack",
+    "description": "Stack section",
+    "body": "@stack('${1:scripts}')"
+  },
+  "Blade Push": {
+    "prefix": "@push",
+    "description": "Push to stack",
+    "body": [
+      "@push('${1:scripts}')",
+      "    ${2:// Content}",
+      "@endpush"
+    ]
+  },
+  "Blade Prepend": {
+    "prefix": "@prepend",
+    "description": "Prepend to stack",
+    "body": [
+      "@prepend('${1:scripts}')",
+      "    ${2:// Content}",
+      "@endprepend"
+    ]
+  },
+  "Blade CSRF": {
+    "prefix": "@csrf",
+    "description": "CSRF token field",
+    "body": "@csrf"
+  },
+  "Blade Method": {
+    "prefix": "@method",
+    "description": "HTTP method field",
+    "body": "@method('${1:PUT}')"
+  },
+  "Blade Vite": {
+    "prefix": "@vite",
+    "description": "Include Vite assets",
+    "body": "@vite(['${1:resources/css/app.css}', '${2:resources/js/app.js}'])"
+  },
+  "Blade Asset": {
+    "prefix": "asset",
+    "description": "Asset URL",
+    "body": "{{ asset('${1:images/logo.png}') }}"
+  },
+  "Blade Route": {
+    "prefix": "route",
+    "description": "Named route URL",
+    "body": "{{ route('${1:home}') }}"
+  },
+  "Blade Old": {
+    "prefix": "old",
+    "description": "Old input value",
+    "body": "{{ old('${1:email}') }}"
+  },
+  "Blade Session": {
+    "prefix": "@session",
+    "description": "Check session variable",
+    "body": [
+      "@session('${1:status}')",
+      "    ${2:// Content}",
+      "@endsession"
+    ]
+  },
+  "Blade Env": {
+    "prefix": "@env",
+    "description": "Check environment",
+    "body": [
+      "@env('${1:local}')",
+      "    ${2:// Local environment only}",
+      "@endenv"
+    ]
+  },
+  "Blade Production": {
+    "prefix": "@production",
+    "description": "Production environment check",
+    "body": [
+      "@production",
+      "    ${1:// Production only}",
+      "@endproduction"
+    ]
+  },
+  "Blade Once": {
+    "prefix": "@once",
+    "description": "Render content once",
+    "body": [
+      "@once",
+      "    ${1:// Rendered only once}",
+      "@endonce"
+    ]
+  },
+  "Blade PHP": {
+    "prefix": "@php",
+    "description": "Inline PHP code",
+    "body": [
+      "@php",
+      "    ${1:// PHP code}",
+      "@endphp"
+    ]
+  },
+  "Blade JSON": {
+    "prefix": "@json",
+    "description": "JSON encode",
+    "body": "@json(\\$${1:data})"
+  },
+  "Blade Checked": {
+    "prefix": "@checked",
+    "description": "Checked attribute",
+    "body": "@checked(${1:condition})"
+  },
+  "Blade Selected": {
+    "prefix": "@selected",
+    "description": "Selected attribute",
+    "body": "@selected(${1:condition})"
+  },
+  "Blade Disabled": {
+    "prefix": "@disabled",
+    "description": "Disabled attribute",
+    "body": "@disabled(${1:condition})"
+  },
+  "Blade Required": {
+    "prefix": "@required",
+    "description": "Required attribute",
+    "body": "@required(${1:condition})"
+  },
+  "Blade Class": {
+    "prefix": "@class",
+    "description": "Conditional classes",
+    "body": "@class(['${1:class-name}' => ${2:condition}])"
+  },
+  "Blade Style": {
+    "prefix": "@style",
+    "description": "Conditional styles",
+    "body": "@style(['${1:color: red}' => ${2:condition}])"
+  }
+}

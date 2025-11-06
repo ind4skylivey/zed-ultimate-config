@@ -1,10 +1,112 @@
 {
-  // =========================
   // Editor Appearance
   // =========================
+  "ui_font_family": "Hack",
+  "buffer_font_family": "MesloLGL Nerd Font",
+  "indent_guides": {
+    "coloring": "indent_aware",
+    "background_coloring": "disabled"
+  },
+
+  // Theme Overrides
+  // =========================
+  "theme_overrides": {
+    "Catppuccin Iced Latte (Blur) [Light]": {
+      "syntax": {
+        "comment": {
+          "font_style": "italic",
+          "color": "#802200"
+        },
+        "comment.doc": {
+          "font_style": "italic",
+          "color": "#802200"
+        },
+        "keyword": {
+          "font_weight": 700,
+          "color": "#9400D3"
+        },
+        "keyword.control": {
+          "font_weight": 700,
+          "color": "#D91E18"
+        },
+        "string": {
+          "font_weight": 500,
+          "color": "#006600"
+        },
+        "string.special": {
+          "color": "#0D5C6F"
+        },
+        "function": {
+          "font_weight": 600,
+          "color": "#2B4F8C"
+        },
+        "function.method": {
+          "font_weight": 600,
+          "color": "#0D5C6F"
+        },
+        "variable": {
+          "color": "#2F2F2F"
+        },
+        "variable.special": {
+          "font_weight": 600,
+          "color": "#D91E18"
+        },
+        "type": {
+          "font_weight": 600,
+          "color": "#6B4D11"
+        },
+        "constant": {
+          "font_weight": 700,
+          "color": "#A85D00"
+        },
+        "operator": {
+          "font_weight": 600,
+          "color": "#0D5C6F"
+        },
+        "punctuation": {
+          "color": "#4A4A4A"
+        },
+        "punctuation.bracket": {
+          "font_weight": 500,
+          "color": "#4A4A4A"
+        },
+        "punctuation.delimiter": {
+          "font_weight": 500,
+          "color": "#2F2F2F"
+        },
+        "number": {
+          "font_weight": 700,
+          "color": "#A85D00"
+        },
+        "property": {
+          "color": "#2B4F8C"
+        },
+        "tag": {
+          "font_weight": 600,
+          "color": "#D91E18"
+        },
+        "attribute": {
+          "color": "#6B4D11"
+        },
+        "namespace": {
+          "font_style": "italic",
+          "font_weight": 500,
+          "color": "#7B1FA2"
+        }
+      }
+    }
+  },
+
+  "icon_theme": "JetBrains Icons Light",
+
+  // =========================
+  // AI Coding Agents (Optional)
+  // =========================
+  // Uncomment after installing Droid CLI: https://factory.sh
+  /*
   "agent_servers": {
     "droid": {
-      "command": "droid",  // Install: https://docs.factory.ai
+      "command": "droid",
       "args": ["exec", "--auto", "medium", "--output-format", "text"],
       "env": {
         "FACTORY_API_KEY": "${FACTORY_API_KEY}"
@@ -16,15 +118,9 @@
       "env": {
         "FACTORY_API_KEY": "${FACTORY_API_KEY}"
       }
-    },
-    "droid-high": {
-      "command": "droid",
-      "args": ["exec", "--auto", "high", "--output-format", "text"],
-      "env": {
-        "FACTORY_API_KEY": "${FACTORY_API_KEY}"
-      }
     }
   },
+  */
   "vim_mode": true,
   "base_keymap": "Emacs",
   "inlay_hints": {
@@ -39,15 +135,14 @@
   "buffer_font_features": {
     "calt": false // ligatures
   },
-  "lsp_document_colors": "border",
+  "lsp_document_colors": "inlay",
   "wrap_guides": [79],
-  "show_edit_predictions": false,
 
   // Theme & Colors
   "theme": {
     "mode": "system",
     "light": "One Light",
-    "dark": "JetBrains New Dark"
+    "dark": "Catppuccin Iced Latte (Blur) [Light]"
   },
   "experimental.theme_overrides": {
     "background.appearance": "transparent",
@@ -68,64 +163,245 @@
   "show_completions_on_input": true,
 
   // =========================
-  // AI & Assistant Features
+  // AI Integration - Local LLM (Optional)
   // =========================
+  // Uncomment after installing Ollama: https://ollama.ai
+  // Then run: ollama pull qwen2.5-coder:14b
+  /*
   "agent": {
-    "play_sound_when_agent_done": true,
-    "inline_assistant_model": {
-      "provider": "zed.dev",
-      "model": "claude-sonnet-4-thinking"
-    },
     "default_model": {
-      "provider": "zed.dev",
-      "model": "claude-sonnet-4"
+      "provider": "ollama",
+      "model": "qwen2.5-coder:14b"
+    },
+    "model_parameters": []
+  },
+  "language_models": {
+    "ollama": {
+      "api_url": "http://localhost:11434",
+      "low_speed_timeout_in_seconds": 600,
+      "available_models": [
+        {
+          "name": "qwen2.5-coder:14b",
+          "display_name": "Qwen 2.5 Coder 14B",
+          "max_tokens": 8192,
+          "context_length": 32000,
+          "keep_alive": "30m",
+          "description": "General-purpose coding model optimized for multiple languages"
+        },
+        {
+          "name": "codellama:13b",
+          "display_name": "Code Llama 13B",
+          "max_tokens": 4096,
+          "context_length": 16000,
+          "keep_alive": "15m",
+          "description": "Code completion and generation model"
+        },
+        {
+          "name": "deepseek-coder:6.7b",
+          "display_name": "DeepSeek Coder 6.7B",
+          "max_tokens": 4096,
+          "context_length": 16000,
+          "keep_alive": "15m",
+          "description": "Lightweight coding model for fast inference"
+        }
+      ]
     }
+  },
+  */
+
+  // =========================
+  // Terminal & Shell
+  // =========================
+  "terminal": {
+    "shell": {
+      "program": "/usr/bin/zsh"
+    },
+    "dock": "bottom",
+    "default_width": 640,
+    "default_height": 320,
+    "working_directory": "current_project_directory",
+    "env": {
+      "EDITOR": "zed --wait"
+    }
+  },
+
+  // =========================
+  // Tabs & Navigation
+  // =========================
+  "tabs": {
+    "close_position": "right",
+    "file_icons": true,
+    "git_status": true
+  },
+  "tab_bar": {
+    "show": true,
+    "show_nav_history_buttons": false
+  },
+  "scrollbar": {
+    "show": "always",
+    "git_diff": true
+  },
+
+  // =========================
+  // File Finder & Search
+  // =========================
+  "file_scan_exclusions": [
+    "**/.git",
+    "**/node_modules",
+    "**/vendor",
+    "**/target",
+    "**/__pycache__",
+    "**/venv",
+    "**/.venv",
+    "**/loot",
+    "**/dumps"
+  ],
+  "search": {
+    "whole_word": false,
+    "case_sensitive": false,
+    "include_ignored": false,
+    "regex": false
+  },
+
+  // =========================
+  // Project Panel & Outline
+  // =========================
+  "project_panel": {
+    "button": true,
+    "default_width": 280,
+    "dock": "left",
+    "file_icons": true,
+    "folder_icons": true,
+    "git_status": true,
+    "indent_size": 20,
+    "auto_reveal_entries": true,
+    "auto_fold_dirs": false
+  },
+  "outline_panel": {
+    "dock": "right",
+    "default_width": 300
+  },
+
+  // =========================
+  // Multi-cursor & Selection
+  // =========================
+  "multi_cursor_modifier": "alt",
+  "cursor_blink": true,
+  "relative_line_numbers": false,
+  "show_edit_predictions": true,
+
+  // =========================
+  // Code Display
+  // =========================
+  "show_whitespaces": "selection",
+  "soft_wrap": "none",
+  "preferred_line_length": 100,
+  "seed_search_query_from_cursor": "always",
+  "linked_edits": true,
+  "show_call_status_icon": true,
+  "confirm_quit": false,
+
+  // =========================
+  // Diagnostics
+  // =========================
+  "diagnostics": {
+    "include_warnings": true,
+    "show_warning_count": true
   },
   "edit_predictions": {
-    "mode": "subtle",
-    "enabled_in_text_threads": false,
-    "copilot": {
-      "proxy": null,
-      "proxy_no_verify": null
-    }
+    "disabled_globs": [
+      ".env",
+      ".env.*",
+      "**/.git/**",
+      "**/loot/**"
+    ]
   },
-  "features": {
-    "edit_prediction_provider": "zed"
+
+  // =========================
+  // File Types
+  // =========================
+  "file_types": {
+    "Dockerfile": ["Dockerfile", "Dockerfile.*"],
+    "Shell Script": ["*.sh", "*.bash", "*.zsh"],
+    "Makefile": ["Makefile", "makefile", "*.mk"]
   },
 
   // =========================
   // Git Integration
   // =========================
   "git": {
-    "inline_blame": { "enabled": false }
+    "inline_blame": {
+      "enabled": true,
+      "delay_ms": 600
+    },
+    "gutter_debounce": 100,
+    "git_status": true,
+    "hunk_actions": true
+  },
+  "journal": {
+    "path": "~/.local/share/zed",
+    "hour_format": "hour24"
   },
 
   // =========================
   // Language-Specific Settings
   // =========================
   "languages": {
+    "Bash": {
+      "tab_size": 2,
+      "hard_tabs": false,
+      "formatter": {
+        "external": {
+          "command": "shfmt",
+          "arguments": ["-i", "2", "-"]
+        }
+      },
+      "format_on_save": "on"
+    },
+    "Shell Script": {
+      "tab_size": 2,
+      "formatter": {
+        "external": {
+          "command": "shfmt",
+          "arguments": ["-i", "2", "-"]
+        }
+      },
+      "format_on_save": "on"
+    },
     "PHP": {
       "tab_size": 4,
       "formatter": {
         "external": {
-          "command": "sh",
-          "arguments": ["-c", "PHP_CS_FIXER_IGNORE_ENV=1 php-cs-fixer fix --using-cache=no \"$1\"", "--", "$ZED_FILE"]
+          "command": "bash",
+          "arguments": [
+            "-c",
+            "cat > {buffer_path} && ./vendor/bin/pint --quiet {buffer_path} && cat {buffer_path}"
+          ]
         }
       },
       "format_on_save": "on",
+      "enable_language_server": true
+    },
+    "Blade": {
+      "tab_size": 4,
+      "format_on_save": "off",
       "enable_language_server": true
     },
     "Python": {
       "formatter": {
         "external": {
           "command": "sh",
-          "arguments": ["-c", "black --skip-string-normalization - 2>/dev/null || python3 -m black --skip-string-normalization - 2>/dev/null || cat"]
+          "arguments": [
+            "-c",
+            "black --skip-string-normalization - 2>/dev/null || python3 -m black --skip-string-normalization - 2>/dev/null || cat"
+          ]
         }
       },
       "format_on_save": "on",
       "enable_language_server": true,
       "tab_size": 4
     },
+    // Rust
     "Rust": {
       "formatter": {
         "external": {
@@ -143,7 +419,7 @@
   "lsp": {
     "intelephense": {
       "binary": {
-        "path": "intelephense",  // Install: npm install -g intelephense
+        "path": "/home/il1v3y/.local/bin/intelephense",
         "arguments": ["--stdio"]
       },
       "settings": {
@@ -164,7 +440,7 @@
     "rust-analyzer": {
       "initialization_options": {
         "check": {
-          "command": "clippy"
+          "command": "clippy" // rust-analyzer.check.command (default: "check")
         },
         "imports": {
           "merge": { "glob": false },
@@ -191,7 +467,17 @@
   // Privacy & Telemetry
   // =========================
   "telemetry": {
-    "diagnostics": false,
+    "diagnostics": true,
     "metrics": false
+  },
+
+  // =========================
+  // Auto-Install Extensions
+  // =========================
+  "auto_install_extensions": {
+    "php": true,
+    "blade": true,
+    "tailwindcss": true,
+    "env": true
   }
 }

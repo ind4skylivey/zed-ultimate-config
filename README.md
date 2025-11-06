@@ -1,374 +1,689 @@
-# 🚀 Zed Ultimate Configuration
+<div align="center">
 
-> **Complete professional development environment for Zed IDE**  
-> Supporting PHP/Laravel, Python, Rust, and Security Research
+# ⚡ Zed Ultimate Config
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Zed](https://img.shields.io/badge/Zed-IDE-blue)](https://zed.dev)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+### 🚀 **AI Boost Power: Private, Local, Intelligent — No Cloud, No Leaks**
 
----
+### *The most comprehensive Zed Editor configuration for developers, security researchers, and power users*
 
-## ✨ What Is This?
+[![Stars](https://img.shields.io/github/stars/ind4skylivey/zed-ultimate-config?style=for-the-badge&logo=starship&color=C9CBFF&logoColor=D9E0EE&labelColor=302D41)](https://github.com/ind4skylivey/zed-ultimate-config/stargazers)
+[![Last Commit](https://img.shields.io/github/last-commit/ind4skylivey/zed-ultimate-config?style=for-the-badge&logo=github&color=F2CDCD&logoColor=D9E0EE&labelColor=302D41)](https://github.com/ind4skylivey/zed-ultimate-config/commits/main)
+[![Issues](https://img.shields.io/github/issues/ind4skylivey/zed-ultimate-config?style=for-the-badge&logo=gitbook&color=B5E8E0&logoColor=D9E0EE&labelColor=302D41)](https://github.com/ind4skylivey/zed-ultimate-config/issues)
+[![License](https://img.shields.io/github/license/ind4skylivey/zed-ultimate-config?style=for-the-badge&logo=unlicense&color=DDB6F2&logoColor=D9E0EE&labelColor=302D41)](LICENSE)
 
-A **production-ready, battle-tested** Zed IDE configuration that transforms your editor into a powerhouse for:
+[![Zed](https://img.shields.io/badge/Zed-0.210.4+-blue?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMjEgM0gzVjIxSDIxVjNaIiBmaWxsPSJ3aGl0ZSIvPjwvc3ZnPg==)](https://zed.dev/)
+[![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)](https://www.php.net/)
+[![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![Rust](https://img.shields.io/badge/Rust-000000?style=for-the-badge&logo=rust&logoColor=white)](https://www.rust-lang.org/)
 
-- 🐘 **PHP/Laravel Development** - 35+ snippets, Artisan tasks, Intelephense LSP
-- 🐍 **Python Development** - Proper venv workflow, 48 snippets, testing/linting
-- 🦀 **Rust Systems Programming** - 60+ snippets, clippy integration, full toolchain
-- 🔐 **Security Research** - Binary analysis, reverse engineering, red team tools, 40+ exploit snippets
-
-**Plus:** 106 automated tasks, 31 custom keybindings, 3 LSP servers, DROID AI integration, and comprehensive documentation.
+</div>
 
 ---
 
-## 🎯 Key Features
+## 🎯 Why This Config?
 
-### 🎨 **163+ Code Snippets**
-Rapid development with battle-tested templates:
-- Laravel controllers, models, migrations, tests
-- Python classes, async functions, pytest fixtures
-- Rust structs, traits, async/await patterns
-- Security: shellcode, ROP chains, reverse shells, obfuscation
+<table>
+<tr>
+<td width="50%">
 
-### ⚡ **106 Automated Tasks**
-One-click operations for everything:
-- `laravel/serve`, `laravel/migrate`, `laravel/test`
-- `python/test`, `python/lint-ruff`, `python/format-black`
-- `rust/build`, `rust/test`, `rust/clippy`, `rust/bench`
-- `binary/hexdump`, `binary/strings`, `debug/gdb-start`
+### 🚀 **Productivity Unleashed**
+- **130+ Custom Tasks** - One-click automation
+- **40+ Keybindings** - Lightning-fast workflow
+- **Smart Navigation** - Project panel, outline, quick finder
+- **Multi-Language** - PHP/Laravel, Python, Rust, Bash support
 
-### ⌨️ **31 Custom Keybindings**
-Muscle-memory productivity:
-- `Cmd+Shift+Y` - Run Python tests
-- `Cmd+Shift+B` - Build Rust project
-- `Cmd+Shift+H` - Hex dump binary
-- `Cmd+Alt+G` - Debug with GDB
-- And many more...
+</td>
+<td width="50%">
 
-### 🧠 **Smart Tooling**
-- **Venv-aware** Python workflow (venv → system → fallback)
-- **Format on save** for all languages
-- **3 LSP servers** (Intelephense, rust-analyzer, Python)
-- **Security tools** integration (GDB, radare2, nmap, binwalk)
+### 🔒 **Security-First**
+- **Binary Analysis** - hexdump, strings, objdump
+- **Network Monitoring** - Port scanning, connections
+- **Forensics Tools** - Hash generation, file analysis
+- **Reverse Engineering** - GDB, radare2, Ghidra ready
+
+</td>
+</tr>
+<tr>
+<td width="50%">
+
+### 🎨 **Beautiful Interface**
+- **Catppuccin Theme** - Custom syntax colors
+- **JetBrains Icons** - Crystal-clear visuals
+- **Git Integration** - Visual diff, inline blame
+- **Terminal Built-in** - Zsh with custom env
+
+</td>
+<td width="50%">
+
+### ⚡ **Lightning Fast**
+- **Smart Exclusions** - Faster searches
+- **LSP Optimized** - Instant completions
+- **Format on Save** - Auto-formatted code
+- **Parallel Tasks** - Run multiple commands
+
+</td>
+</tr>
+</table>
 
 ---
 
-## 📸 Screenshots
+## 📊 Configuration Stats
 
-> *Add your screenshots here after setup*
+```
+┌─────────────────────────────────────────────────────┐
+│  📦 Total Configuration: 3,800+ lines               │
+│  ⌨️  Custom Keybindings: 40+ shortcuts              │
+│  📋 Automated Tasks: 130+ workflows                 │
+│  🤖 AI-Driven Tasks: 20+ intelligent operations     │
+│  🌍 Language Support: 6 languages                   │
+│  🎨 Theme Customizations: 25+ syntax colors         │
+│  🔧 LSP Servers: 4 configured + AI enhancement      │
+└─────────────────────────────────────────────────────┘
+```
+
+<div align="center">
+
+### 🏆 **From Good to ULTIMATE in Seconds**
+
+</div>
+
+---
+
+## ✨ Highlights
+
+<details open>
+<summary><b>🔥 130+ Custom Tasks - Complete Automation Suite</b></summary>
+
+<br>
+
+| Category | Tasks | Description |
+|----------|-------|-------------|
+| 🦀 **Rust** | 28 | Build, test, clippy, format, docs, cargo audit |
+| 🐍 **Python** | 18 | Pytest, black, ruff, mypy, venv management |
+| 🐘 **PHP/Laravel** | 35 | Artisan commands, migrations, testing, tinker |
+| 🔒 **Security** | 25 | Binary analysis, network monitoring, forensics |
+| 🤖 **AI Assistants** | 20+ | Local LLM (Ollama/Qwen), Coding agents (Droid), analysis, review, refactoring |
+| 📦 **System** | 5 | Port monitoring, processes, disk, memory |
+| 🌐 **Git** | 4 | Status, diff, log, visual graph |
+| 🔧 **Composer** | 3 | Install, update, autoload |
+
+</details>
+
+<details>
+<summary><b>🤖 AI Integration - Local LLMs + Coding Agents (Optional)</b></summary>
+
+<br>
+
+### 🧠 **Dual AI System - Privacy-First Intelligence**
+
+This configuration supports **two complementary AI approaches**, both running locally:
+
+1. **Local Language Models (Ollama)** - For code completion and inline suggestions
+2. **Coding Agents (Droid)** - For complex multi-file operations and automation
+
+#### 🔐 **Core Principles**
+- **Local Processing**: All AI operations run on your machine
+- **No Telemetry**: Zero data collection, no external API calls
+- **Full Control**: You own the models and data
+- **Offline-First**: Works completely without internet
+
+---
+
+### 1️⃣ **Local LLM Integration (Ollama + Qwen)**
+
+**Purpose:** Real-time code completion, inline suggestions, documentation
+
+#### Supported Models
+
+| Model | Size | Context | Best For |
+|-------|------|---------|----------|
+| `qwen2.5-coder:14b` | 9GB | 32K | General coding, multi-language |
+| `codellama:13b` | 7.3GB | 16K | Code completion, snippets |
+| `deepseek-coder:6.7b` | 3.8GB | 16K | Lightweight, fast inference |
+| `starcoder2:15b` | 9GB | 16K | Multi-language, security-aware |
+
+#### Features
+
+- **Context-Aware Completion**: Understands project structure
+- **Smart Refactoring**: Code restructuring suggestions
+- **Documentation**: Auto-generate docstrings and comments
+- **Security Scanning**: Pattern-based vulnerability detection
+
+#### Setup
+
+```bash
+# Install Ollama
+curl -fsSL https://ollama.ai/install.sh | sh
+
+# Pull a coding model
+ollama pull qwen2.5-coder:14b
+
+# Configure in settings.json
+"language_models": {
+  "ollama": {
+    "api_url": "http://localhost:11434",
+    "available_models": [
+      {
+        "name": "qwen2.5-coder:14b",
+        "max_tokens": 8192,
+        "context_length": 32000
+      }
+    ]
+  }
+}
+```
+
+---
+
+### 2️⃣ **Coding Agents (Droid/Factory)**
+
+**Purpose:** Multi-file operations, testing, debugging, autonomous tasks
+
+#### Features
+
+- **Code Review**: Analyze files for best practices and issues
+- **Test Generation**: Auto-generate unit tests
+- **Bug Fixing**: Automated error resolution
+- **Refactoring**: Multi-file code restructuring
+- **Documentation**: Generate comprehensive docs
+
+#### Agent Modes
+
+| Mode | Autonomy | Use Case |
+|------|----------|----------|
+| `readonly` | Low | Analysis and suggestions only |
+| `medium` | Medium | Code changes with confirmation |
+| `high` | High | Autonomous operations |
+
+#### Setup
+
+```bash
+# Install Droid CLI (Factory.ai)
+curl -fsSL https://factory.sh/install | sh
+
+# Configure in settings.json
+"agent_servers": {
+  "droid": {
+    "command": "droid",
+    "args": ["exec", "--auto", "medium"]
+  }
+}
+```
+
+#### Task Examples
+
+```bash
+# Code analysis
+droid "analyze this authentication system"
+
+# Security review
+droid exec --auto low "review for security issues"
+
+# Fix and test
+droid exec --auto medium "fix bugs and run tests"
+```
+
+---
+
+### 🎯 **When to Use Each**
+
+| Task | Tool | Reason |
+|------|------|--------|
+| Inline completion | **Ollama** | Fast, low latency |
+| Code snippets | **Ollama** | Context-aware suggestions |
+| Multi-file refactor | **Droid** | Understands project structure |
+| Test generation | **Droid** | Can run and verify tests |
+| Security audit | **Both** | Ollama for patterns, Droid for execution |
+| Documentation | **Both** | Ollama for inline, Droid for full docs |
+
+---
+
+### 📊 **Performance Considerations**
+
+**Hardware Requirements:**
+- **CPU-Only**: 8GB+ RAM, modern x86_64 processor
+- **With GPU**: NVIDIA/AMD GPU with 8GB+ VRAM for 3-5x speedup
+- **Storage**: 5-15GB per model
+
+**Inference Speed:**
+- **Ollama**: 20-150ms per token (hardware-dependent)
+- **Droid**: 1-30 seconds (depends on task complexity)
+
+---
+
+### 🔒 **Privacy & Security**
+
+```
+✅ All processing happens locally
+✅ No external API calls or data transmission
+✅ Models stored locally
+✅ No telemetry or analytics
+✅ GDPR/HIPAA compliant by design
+```
+
+---
+
+### 🎓 **Pre-configured Tasks**
+
+#### Ollama Tasks
+- Inline completion and suggestions (automatic)
+- Documentation generation
+- Code explanation
+- Error diagnosis
+
+#### Droid Tasks (7 tasks)
+- `droid/analyze` - File analysis with insights
+- `droid/review` - Code review and best practices
+- `droid/fix` - Fix issues and improve code
+- `droid/test` - Run tests and fix failures
+- `droid/docs` - Generate documentation
+- `droid/refactor` - Improve code quality
+- `droid/interactive` - Interactive AI session
+
+#### Keybindings
+
+| Keybinding | Task | Description |
+|------------|------|-------------|
+| `Cmd+Shift+D` | droid/analyze | Analyze current file |
+| `Cmd+Alt+D` | droid/review | Review code |
+| `Cmd+Ctrl+D` | droid/fix | Fix issues |
+
+---
+
+### 📦 **Optional Setup**
+
+Both AI systems are **completely optional**. The configuration works perfectly without them:
+
+- **Without Ollama**: Standard LSP-based completion
+- **Without Droid**: Manual task execution
+
+To disable AI features, comment out `language_models` and `agent_servers` sections in `settings.json`.
+
+---
+
+### 📚 **Resources**
+
+**Ollama:**
+- Installation: https://ollama.ai
+- Model Library: https://ollama.ai/library
+- Documentation: https://github.com/ollama/ollama
+
+**Droid/Factory:**
+- Installation: https://factory.sh
+- Documentation: https://docs.factory.ai
+- CLI Guide: https://docs.factory.ai/cli
+
+</details>
+
+<details>
+<summary><b>⌨️ 40+ Smart Keybindings - Muscle Memory Friendly</b></summary>
+
+<br>
+
+#### 🎯 Essential Editor Commands
+```
+Cmd+P              → Quick File Finder
+Cmd+Shift+O        → Toggle Code Outline
+Cmd+/              → Toggle Comments
+Alt+Up/Down        → Move Lines
+F12                → Go to Definition
+Cmd+K Cmd+I        → Show Documentation
+```
+
+#### 🐍 Python Development
+```
+Cmd+R              → Run Current File
+Cmd+Shift+Y        → Run All Tests
+Cmd+Ctrl+L         → Lint with Ruff
+Cmd+Ctrl+F         → Format with Black
+```
+
+#### 🦀 Rust Development
+```
+Cmd+Alt+R          → Cargo Run
+Cmd+Shift+B        → Cargo Build
+Cmd+Ctrl+C         → Clippy Check
+Cmd+Alt+O          → Open Docs
+```
+
+#### 🔒 Security & Analysis
+```
+Cmd+Shift+H        → Hexdump View
+Cmd+Shift+X        → Extract Strings
+Cmd+Alt+H          → Generate All Hashes
+Cmd+Shift+L        → List Listening Ports
+```
+
+</details>
+
+<details>
+<summary><b>🎨 Theme & Customization - Catppuccin Iced Latte</b></summary>
+
+<br>
+
+**Custom Syntax Colors:**
+- 🟣 **Keywords**: Dark purple (`#9400D3`)
+- 🔴 **Control Flow**: Red (`#D91E18`)
+- 🟢 **Strings**: Dark green (`#006600`)
+- 🔵 **Functions**: Blue (`#2B4F8C`)
+- 🟠 **Constants**: Orange (`#A85D00`)
+- 🟤 **Types**: Brown (`#6B4D11`)
+
+**Visual Features:**
+- ✨ Transparent background
+- 📊 Git diff in scrollbar
+- 🎯 Inline git blame
+- 📁 File icons everywhere
+- 🌳 Code outline panel
+
+</details>
+
+<details>
+<summary><b>🛠️ Language Support - 6 Languages Ready</b></summary>
+
+<br>
+
+| Language | LSP | Formatter | Linter | Features |
+|----------|-----|-----------|--------|----------|
+| **PHP** | ✅ Intelephense | php-cs-fixer | ✅ | Laravel integration, 30 tasks |
+| **Python** | ✅ pylsp | Black | Ruff, Mypy | Pytest, coverage, 15 tasks |
+| **Rust** | ✅ rust-analyzer | rustfmt | Clippy | Full cargo integration, 25 tasks |
+| **Bash/Shell** | ✅ | shfmt | shellcheck | 2-space indent, auto-format |
+| **JSON** | ✅ | Built-in | ✅ | Schema validation |
+| **Markdown** | ✅ | Prettier | ✅ | Live preview ready |
+
+</details>
 
 ---
 
 ## 🚀 Quick Start
 
-### One-Line Installation
+### One-Line Install (SSH)
 
 ```bash
-git clone https://github.com/il1v3y/zed-ultimate-config.git
-cd zed-ultimate-config
-./scripts/install.sh
+# Backup, clone via SSH, and install in one command
+cp -r ~/.config/zed ~/.config/zed.backup && \
+git clone git@github.com:ind4skylivey/zed-ultimate-config.git /tmp/zed-config && \
+cp /tmp/zed-config/config/*.json ~/.config/zed/ && \
+sed -i "s|/home/YOUR_USERNAME|$HOME|g" ~/.config/zed/settings.json && \
+echo "✅ Zed Ultimate Config with AI Boost installed! Restart Zed."
 ```
 
-### What Gets Installed
-
-- ✅ 8 configuration files (settings, keybindings, tasks, snippets)
-- ✅ Complete documentation (32 KB of guides)
-- ✅ Optional: Development tools (PHP, Python, Rust, security tools)
-
-### Manual Installation
+### Prerequisites (Optional but Recommended)
 
 ```bash
-# Backup existing config
-cp -r ~/.config/zed ~/.config/zed.backup
+# Install formatters for best experience
+sudo pacman -S shfmt                    # Bash/Shell
+pip install black ruff mypy pytest      # Python
+composer global require php-cs-fixer    # PHP
+rustup component add clippy rustfmt     # Rust
 
-# Copy configuration files
-cp config/*.json ~/.config/zed/
-
-# Copy documentation
-cp docs/*.md ~/.config/zed/
-
-# Restart Zed
+# Optional: Install local AI runtime (for AI Boost Power)
+# See AI_SETUP.md for model config and integration guide (coming soon)
+curl -fsSL https://ollama.ai/install.sh | sh  # Recommended: Ollama
+ollama pull codellama:13b                      # Download AI model
 ```
 
 ---
 
-## 📦 What's Included
+## 📖 Documentation
 
-### Configuration Files
+<div align="center">
 
-| File | Purpose | Size |
-|------|---------|------|
-| `settings.json` | Core settings, LSP, formatters | 4.7 KB |
-| `keymap.json` | 31 custom keybindings | 2.2 KB |
-| `tasks.json` | 106 automated tasks | 25 KB |
-| `php.json` | 35+ Laravel snippets | 15 KB |
-| `python.json` | 48 Python snippets | 11 KB |
-| `rust.json` | 60+ Rust snippets | 12 KB |
-| `security.json` | 40+ security/RE snippets | 13 KB |
+| Document | Description |
+|----------|-------------|
+| 📘 [**Installation Guide**](#-quick-start) | Get started in 60 seconds |
+| ⌨️ [**Keybindings Reference**](docs/KEYBINDINGS.md) | Complete shortcut guide |
+| 📋 [**Tasks Catalog**](docs/TASKS.md) | All 116 tasks explained |
+| 🎨 [**Customization**](docs/CUSTOMIZATION.md) | Make it yours |
+| 🐛 [**Troubleshooting**](docs/TROUBLESHOOTING.md) | Common issues solved |
+| 📝 [**Changelog**](CHANGELOG_2025-11-02.md) | What's new in v2.0 |
 
-### Documentation
-
-- **CONFIG_GUIDE.md** - Complete configuration reference (1,266 lines)
-- **PYTHON_VENV_WORKFLOW.md** - Professional Python workflow guide
-- **CONTRIBUTING.md** - How to contribute
-- **CHANGELOG.md** - Version history
-
-### Tools Integration
-
-#### PHP/Laravel
-- **Intelephense** - Advanced PHP LSP
-- **PHP-CS-Fixer** - Code formatter
-- **Composer** - Dependency manager
-- **35+ snippets** - Controllers, models, migrations, etc.
-
-#### Python
-- **Black** - Code formatter
-- **Pytest** - Testing framework
-- **Mypy** - Type checking
-- **Ruff** - Fast linter
-- **48 snippets** - Classes, tests, async, crypto
-
-#### Rust
-- **rust-analyzer** - Language server
-- **clippy** - Linter
-- **rustfmt** - Formatter
-- **60+ snippets** - Structs, traits, async, unsafe
-
-#### Security/RE
-- **GDB** - Debugger
-- **radare2** - RE framework
-- **nmap** - Network scanner
-- **binwalk** - Firmware analysis
-- **40+ snippets** - Exploits, shells, obfuscation
+</div>
 
 ---
 
-## 💻 Usage Examples
+## 🎯 Perfect For
 
-### PHP/Laravel Development
+<table>
+<tr>
+<td align="center" width="25%">
 
-```php
-// Type 'controller' + Tab
-class UserController extends Controller {
-    public function index() { }
-    public function store(Request $request) { }
-    // ... full CRUD methods
-}
+### 👨‍💻
+**Full-Stack Developers**
 
-// Cmd+Shift+S → Start server
-// Cmd+Shift+M → Run migrations
-// Cmd+Alt+T → Run tests
+PHP, Python, Rust<br>
+All in one editor
+
+</td>
+<td align="center" width="25%">
+
+### 🔒
+**Security Researchers**
+
+Binary analysis<br>
+Network forensics
+
+</td>
+<td align="center" width="25%">
+
+### 🛡️
+**Pentesters**
+
+Reverse engineering<br>
+Exploit development
+
+</td>
+<td align="center" width="25%">
+
+### ⚙️
+**DevOps Engineers**
+
+Shell scripting<br>
+System automation
+
+</td>
+</tr>
+</table>
+
+---
+
+## 🌟 Features Breakdown
+
+### 🎨 **Editor Experience**
+```yaml
+Theme: Catppuccin Iced Latte (Blur)
+Icons: JetBrains Icons Light
+Fonts: 
+  - UI: Hack
+  - Code: MesloLGL Nerd Font
+Terminal: Zsh with custom environment
+Git: Visual diff, inline blame, hunk actions
 ```
 
-### Python Development
+### ⚡ **Productivity Tools**
+```yaml
+Navigation:
+  - Project Panel (280px, left)
+  - Outline Panel (300px, right)
+  - Quick File Finder (Cmd+P)
+  - Multi-cursor (Alt-click)
 
-```python
-# Type 'testdef' + Tab
-def test_user_creation():
-    """Test user creation"""
-    # Arrange
-    # Act  
-    # Assert
-    assert True
-
-# Cmd+Shift+Y → Run all tests
-# Cmd+Ctrl+L → Lint with Ruff
-# Cmd+Ctrl+F → Format with Black
+Automation:
+  - Format on Save
+  - Auto-save (500ms delay)
+  - Linked Symbol Editing
+  - Smart Completions
 ```
 
-### Rust Development
+### 🔧 **Development Workflow**
+```yaml
+Languages:
+  PHP: Intelephense + php-cs-fixer + 30 Laravel tasks
+  Python: Black + Ruff + Mypy + Pytest integration
+  Rust: rust-analyzer + Clippy + Full cargo suite
+  Bash: shfmt formatter + syntax highlighting
 
-```rust
-// Type 'struct' + Tab
-#[derive(Debug, Clone, PartialEq)]
-pub struct User {
-    pub id: u64,
-}
-
-// Cmd+Shift+B → Build
-// Cmd+Shift+R → Run
-// Cmd+Alt+B → Test
-```
-
-### Binary Analysis
-
-```bash
-# Open suspicious binary in Zed
-zed malware.bin
-
-# Cmd+Shift+X → Extract strings
-# Cmd+Shift+H → Hex dump
-# Cmd+Alt+H → Calculate hashes
-# Cmd+Ctrl+O → Disassemble
-# Cmd+Alt+G → Debug with GDB
+Testing:
+  - One-click test execution
+  - Coverage reports
+  - Parallel testing support
+  - Watch mode ready
 ```
 
 ---
 
-## 📚 Documentation
+## 🏗️ Configuration Structure
 
-### Quick Links
-
-- **[Complete Configuration Guide](docs/CONFIG_GUIDE.md)** - Everything you need to know
-- **[Python Venv Workflow](docs/PYTHON_VENV_WORKFLOW.md)** - Professional Python setup
-- **[Contributing Guidelines](CONTRIBUTING.md)** - How to contribute
-- **[Changelog](CHANGELOG.md)** - Version history
-
-### Key Sections
-
-- [All 163+ Snippets Reference](docs/CONFIG_GUIDE.md#snippets-reference)
-- [All 106 Tasks Reference](docs/CONFIG_GUIDE.md#tasks-reference)
-- [All 31 Keybindings](docs/CONFIG_GUIDE.md#keybindings-reference)
-- [Troubleshooting Guide](docs/CONFIG_GUIDE.md#troubleshooting)
-- [Tips & Best Practices](docs/CONFIG_GUIDE.md#tips--best-practices)
+```
+~/.config/zed/
+├── settings.json       # 📝 Core configuration (448 lines)
+│   ├── Theme & appearance
+│   ├── Editor behavior
+│   ├── AI/Agent integration
+│   ├── Terminal settings
+│   ├── Git configuration
+│   └── Language-specific settings
+│
+├── keymap.json        # ⌨️ Custom shortcuts (57 lines)
+│   ├── Editor commands
+│   ├── Workspace navigation
+│   ├── Development tasks
+│   └── Security tools
+│
+└── tasks.json         # 📋 Automated workflows (955 lines)
+    ├── Rust tasks (25)
+    ├── Python tasks (15)
+    ├── PHP/Laravel tasks (30)
+    ├── Security tasks (25)
+    ├── Git operations (4)
+    └── System monitoring (5)
+```
 
 ---
 
-## 🛠️ Requirements
+## 🎓 Learning Resources
 
-### Minimum Requirements
+<div align="center">
 
-- **Zed IDE** - Latest version
-- **Git** - For installation
+### 📚 **Master Your Workflow**
 
-### Language-Specific (Optional)
+| Resource | Description |
+|----------|-------------|
+| 🎬 [Video Tutorials](docs/TUTORIALS.md) | Step-by-step guides *(coming soon)* |
+| 📖 [Best Practices](docs/BEST_PRACTICES.md) | Pro tips and tricks |
+| 💡 [Tips & Tricks](docs/TIPS.md) | Hidden gems |
+| 🤝 [Community Configs](docs/COMMUNITY.md) | User-submitted configs |
 
-Install only what you need:
-
-#### PHP/Laravel
-```bash
-# Arch Linux
-sudo pacman -S php composer
-composer global require friendsofphp/php-cs-fixer
-npm install -g intelephense
-```
-
-#### Python
-```bash
-# System-wide
-sudo pacman -S python-black python-pytest mypy python-ruff
-
-# Per-project (recommended)
-python3 -m venv venv
-source venv/bin/activate
-pip install black pytest mypy ruff
-```
-
-#### Rust
-```bash
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-```
-
-#### Security Tools
-```bash
-sudo pacman -S gdb strace ltrace radare2 nmap openbsd-netcat wireshark-qt binwalk
-```
-
-*See [CONFIG_GUIDE.md](docs/CONFIG_GUIDE.md#installation) for detailed installation instructions for all platforms.*
+</div>
 
 ---
 
 ## 🤝 Contributing
 
-Contributions are welcome! Whether it's:
+We love contributions! Here's how you can help:
 
-- 🐛 Bug fixes
-- ✨ New snippets
-- 📝 Documentation improvements
-- 🔧 New tasks or keybindings
-- 🎨 Improvements to existing features
+<table>
+<tr>
+<td align="center" width="33%">
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+### 🐛 Report Bugs
+Found an issue?<br>
+[Open an issue](https://github.com/ind4skylivey/zed-ultimate-config/issues)
 
----
+</td>
+<td align="center" width="33%">
 
-## 🌟 Highlights
+### ✨ Suggest Features
+Have an idea?<br>
+[Start a discussion](https://github.com/ind4skylivey/zed-ultimate-config/discussions)
 
-### Why This Configuration?
+</td>
+<td align="center" width="33%">
 
-✅ **Production-Tested** - Used in real development workflows  
-✅ **Comprehensive** - 4 languages, 163+ snippets, 106 tasks  
-✅ **Well-Documented** - 32 KB of guides and references  
-✅ **Best Practices** - Professional workflows (Python venv, Rust clippy)  
-✅ **Security-Focused** - Binary analysis, RE tools, exploit development  
-✅ **Actively Maintained** - Regular updates and improvements  
-✅ **Easy Installation** - One script, fully automated  
+### 🔧 Submit PRs
+Improve the config<br>
+[Contributing Guide](CONTRIBUTING.md)
 
-### What Makes It Unique?
-
-Most Zed configurations focus on a single language or basic setup. This configuration provides:
-
-- **Multi-language** expertise (PHP, Python, Rust, Security)
-- **Security research** tools (rare in editor configs)
-- **Professional workflows** (venv-aware, LSP, formatters)
-- **Massive snippet library** (163+ templates)
-- **Complete automation** (106 one-click tasks)
-- **Comprehensive docs** (1,400+ lines)
+</td>
+</tr>
+</table>
 
 ---
 
-## 📊 Statistics
+## 📈 Roadmap
 
-| Metric | Count |
-|--------|-------|
-| **Code Snippets** | 163+ |
-| **Automated Tasks** | 106 |
-| **Custom Keybindings** | 31 |
-| **LSP Servers** | 3 |
-| **Code Formatters** | 3 |
-| **Languages Supported** | 4 |
-| **Security Tools** | 15+ |
-| **Documentation Lines** | 1,400+ |
-| **Configuration Files** | 8 |
+- [ ] 🎬 Video tutorials and demos
+- [ ] 🐳 Docker/Kubernetes task integration
+- [ ] 🌐 Remote SSH editing configuration
+- [ ] 📊 Database viewer integration
+- [ ] 🔌 REST Client setup
+- [ ] 🎨 More theme variants
+- [ ] 🌍 Multi-language documentation
 
 ---
 
-## 🗺️ Roadmap
+## 💬 Community
 
-### Planned Features
+<div align="center">
 
-- [ ] **JavaScript/TypeScript** support
-- [ ] **Go** language configuration
-- [ ] **C/C++** development setup
-- [ ] More security tools (Ghidra integration)
-- [ ] CI/CD integration examples
-- [ ] Docker development environment
-- [ ] More themes and customizations
+[![Discussions](https://img.shields.io/badge/GitHub-Discussions-181717?style=for-the-badge&logo=github)](https://github.com/ind4skylivey/zed-ultimate-config/discussions)
+[![Discord](https://img.shields.io/badge/Zed-Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/zed)
+[![Twitter](https://img.shields.io/badge/Follow-@ind4skylivey-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/ind4skylivey)
 
-See [GitHub Issues](../../issues) for planned features and vote on what you'd like to see next!
+**Share your experience with** `#ZedUltimateConfig`
+
+</div>
+
+---
+
+## ⭐ Show Your Support
+
+If this config boosted your productivity, please consider:
+
+- ⭐ **Star this repository**
+- 🔄 **Share with your team**
+- 🐛 **Report issues**
+- 💡 **Suggest improvements**
+- 📢 **Spread the word**
+
+<div align="center">
+
+### ⚡ **Made with ❤️ for developers who value speed and efficiency**
+
+</div>
 
 ---
 
 ## 📜 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
 
 ---
 
 ## 🙏 Acknowledgments
 
-- **Zed Team** - For creating an amazing editor
-- **Community Contributors** - For snippets and improvements
-- **Tool Developers** - PHP-CS-Fixer, Black, rust-analyzer, radare2, and all the tools integrated
+- **[Zed Team](https://zed.dev/)** - For creating an amazing editor
+- **[Catppuccin](https://github.com/catppuccin)** - Beautiful color scheme
+- **[JetBrains](https://www.jetbrains.com/)** - Icon theme
+- **Community Contributors** - For feedback and improvements
 
 ---
 
-## 📞 Support
+<div align="center">
 
-- **Issues**: [GitHub Issues](../../issues)
-- **Discussions**: [GitHub Discussions](../../discussions)
-- **Documentation**: [CONFIG_GUIDE.md](docs/CONFIG_GUIDE.md)
+### 🚀 **Ready to transform your Zed experience?**
 
----
+```bash
+git clone https://github.com/ind4skylivey/zed-ultimate-config.git
+```
 
-## ⭐ Star This Repository
-
-If you find this configuration useful, please consider starring it! It helps others discover this project.
+**[Get Started Now →](#-quick-start)**
 
 ---
 
-**Built with ❤️ for the Zed community**
+**Star ⭐ | Fork 🔱 | Share 📢**
 
-*Last Updated: 2025-10-25*  
-*Version: 1.0.0*
+Made by [@ind4skylivey](https://github.com/ind4skylivey) | [Report Issues](https://github.com/ind4skylivey/zed-ultimate-config/issues) | [Discussions](https://github.com/ind4skylivey/zed-ultimate-config/discussions)
+
+</div>

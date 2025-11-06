@@ -77,11 +77,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - 5 security keybindings
 - Integration with 15+ security tools
 
-#### DROID AI Integration
-- 3 DROID agents (readonly, medium, high autonomy)
-- 7 AI-assisted tasks
-- 3 custom keybindings
-- Environment variable configuration
+#### AI Integration (Optional)
+- Local LLM support (Ollama + Qwen/CodeLlama)
+- Coding agent support (Droid/Factory)
+- 7+ AI-assisted tasks
+- Configurable agent modes
+- Dual AI system for completion and automation
 
 #### Installation & Scripts
 - Automated installation script (`install.sh`)
@@ -164,5 +165,5 @@ This is the initial public release of Zed Ultimate Configuration. It represents 
 - **Fixed**: Bug fixes
 - **Security**: Security fixes
 
-[Unreleased]: https://github.com/il1v3y/zed-ultimate-config/compare/v1.0.0...HEAD
-[1.0.0]: https://github.com/il1v3y/zed-ultimate-config/releases/tag/v1.0.0
+[Unreleased]: https://github.com/ind4skylivey/zed-ultimate-config/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/ind4skylivey/zed-ultimate-config/releases/tag/v1.0.0

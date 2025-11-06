@@ -1,0 +1,231 @@
+{
+  "Livewire Component": {
+    "prefix": "livewire-component",
+    "description": "Livewire 3 component class",
+    "body": [
+      "<?php",
+      "",
+      "namespace ${1:App\\Livewire};",
+      "",
+      "use Livewire\\Component;",
+      "",
+      "class ${2:ComponentName} extends Component",
+      "{",
+      "    ${3:// Properties}",
+      "",
+      "    public function render()",
+      "    {",
+      "        return view('livewire.${4:component-name}');",
+      "    }",
+      "}"
+    ]
+  },
+  "Livewire Property": {
+    "prefix": "livewire-property",
+    "description": "Public property",
+    "body": "public \\$${1:property}${2: = '${3:default}'};"
+  },
+  "Livewire Validate": {
+    "prefix": "livewire-validate",
+    "description": "Validated property (Livewire 3)",
+    "body": "#[Validate('${1:required|string|max:255}')]",
+    "body_append": "public ${2:string} \\$${3:email} = '';"
+  },
+  "Livewire Computed": {
+    "prefix": "livewire-computed",
+    "description": "Computed property",
+    "body": [
+      "#[Computed]",
+      "public function ${1:propertyName}()",
+      "{",
+      "    return ${2:// Computed value};",
+      "}"
+    ]
+  },
+  "Livewire On": {
+    "prefix": "livewire-on",
+    "description": "Event listener (Livewire 3)",
+    "body": [
+      "#[On('${1:event-name}')]",
+      "public function handle${2:EventName}(\\$${3:param})",
+      "{",
+      "    ${4:// Handle event}",
+      "}"
+    ]
+  },
+  "Livewire Mount": {
+    "prefix": "livewire-mount",
+    "description": "Mount method",
+    "body": [
+      "public function mount(${1:\\$param})",
+      "{",
+      "    ${2:// Initialize component}",
+      "}"
+    ]
+  },
+  "Livewire Updated": {
+    "prefix": "livewire-updated",
+    "description": "Updated hook",
+    "body": [
+      "public function updated${1:PropertyName}(\\$value)",
+      "{",
+      "    ${2:// Called when property updates}",
+      "}"
+    ]
+  },
+  "Livewire Rules": {
+    "prefix": "livewire-rules",
+    "description": "Validation rules method",
+    "body": [
+      "protected function rules()",
+      "{",
+      "    return [",
+      "        '${1:field}' => '${2:required|string|max:255}',",
+      "    ];",
+      "}"
+    ]
+  },
+  "Livewire Validate All": {
+    "prefix": "livewire-validate-all",
+    "description": "Validate all properties",
+    "body": "\\$this->validate();"
+  },
+  "Livewire Validate Only": {
+    "prefix": "livewire-validate-only",
+    "description": "Validate specific property",
+    "body": "\\$this->validateOnly('${1:property}');"
+  },
+  "Livewire Reset": {
+    "prefix": "livewire-reset",
+    "description": "Reset properties",
+    "body": "\\$this->reset(['${1:property}']);"
+  },
+  "Livewire Dispatch": {
+    "prefix": "livewire-dispatch",
+    "description": "Dispatch event",
+    "body": "\\$this->dispatch('${1:event-name}', ${2:param: \\$value});"
+  },
+  "Livewire Redirect": {
+    "prefix": "livewire-redirect",
+    "description": "Redirect to route",
+    "body": "return \\$this->redirect(route('${1:home}'));"
+  },
+  "Livewire Flash": {
+    "prefix": "livewire-flash",
+    "description": "Flash message",
+    "body": "session()->flash('${1:message}', '${2:Success!}');"
+  },
+  "Livewire Wire Model": {
+    "prefix": "wire-model",
+    "description": "Wire model directive",
+    "body": "wire:model=\"${1:property}\""
+  },
+  "Livewire Wire Model Live": {
+    "prefix": "wire-live",
+    "description": "Wire model live directive",
+    "body": "wire:model.live=\"${1:property}\""
+  },
+  "Livewire Wire Model Debounce": {
+    "prefix": "wire-debounce",
+    "description": "Wire model with debounce",
+    "body": "wire:model.live.debounce.${1:500}ms=\"${2:property}\""
+  },
+  "Livewire Wire Click": {
+    "prefix": "wire-click",
+    "description": "Wire click directive",
+    "body": "wire:click=\"${1:method}\""
+  },
+  "Livewire Wire Submit": {
+    "prefix": "wire-submit",
+    "description": "Wire submit directive",
+    "body": "wire:submit=\"${1:save}\""
+  },
+  "Livewire Wire Loading": {
+    "prefix": "wire-loading",
+    "description": "Wire loading directive",
+    "body": [
+      "<div wire:loading wire:target=\"${1:save}\">",
+      "    ${2:Loading...}",
+      "</div>"
+    ]
+  },
+  "Livewire Wire Loading Class": {
+    "prefix": "wire-loading-class",
+    "description": "Wire loading class directive",
+    "body": "wire:loading.class=\"${1:opacity-50}\""
+  },
+  "Livewire Wire Poll": {
+    "prefix": "wire-poll",
+    "description": "Wire poll directive",
+    "body": "wire:poll.${1:5}s=\"${2:refresh}\""
+  },
+  "Livewire Wire Init": {
+    "prefix": "wire-init",
+    "description": "Wire init directive",
+    "body": "wire:init=\"${1:loadData}\""
+  },
+  "Livewire Wire Key": {
+    "prefix": "wire-key",
+    "description": "Wire key directive",
+    "body": "wire:key=\"${1:item-{{ \\$item->id }}}\""
+  },
+  "Livewire Wire Ignore": {
+    "prefix": "wire-ignore",
+    "description": "Wire ignore directive",
+    "body": "wire:ignore"
+  },
+  "Livewire Wire Dirty": {
+    "prefix": "wire-dirty",
+    "description": "Wire dirty class",
+    "body": "wire:dirty.class=\"${1:border-yellow-500}\""
+  },
+  "Livewire Wire Offline": {
+    "prefix": "wire-offline",
+    "description": "Wire offline directive",
+    "body": [
+      "<div wire:offline>",
+      "    ${1:You are currently offline}",
+      "</div>"
+    ]
+  },
+  "Livewire Form Object": {
+    "prefix": "livewire-form",
+    "description": "Livewire 3 Form Object",
+    "body": [
+      "<?php",
+      "",
+      "namespace ${1:App\\Livewire\\Forms};",
+      "",
+      "use Livewire\\Form;",
+      "",
+      "class ${2:FormName} extends Form",
+      "{",
+      "    #[Validate('${3:required|string}')]",
+      "    public string \\$${4:name} = '';",
+      "",
+      "    public function store()",
+      "    {",
+      "        \\$this->validate();",
+      "        ${5:// Store logic}",
+      "    }",
+      "}"
+    ]
+  },
+  "Livewire Locked": {
+    "prefix": "livewire-locked",
+    "description": "Locked property (Livewire 3)",
+    "body": "#[Locked]",
+    "body_append": "public \\$${1:id};"
+  },
+  "Livewire Url": {
+    "prefix": "livewire-url",
+    "description": "URL-bound property (Livewire 3)",
+    "body": "#[Url]",
+    "body_append": "public \\$${1:search} = '';"
+  },
+  "Livewire Lazy": {
+    "prefix": "livewire-lazy",
+    "description": "Lazy-loaded component",
+    "body": "#[Lazy]"
+  }
+}

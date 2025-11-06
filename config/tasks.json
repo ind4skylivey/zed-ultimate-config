@@ -204,10 +204,17 @@
     "use_new_terminal": false,
     "allow_concurrent_runs": false
   },
+  
+  // =========================
+  // AI Coding Agent Tasks (Optional)
+  // =========================
+  // Requires Droid CLI: https://factory.sh
+  // Uncomment after installation
+  /*
   {
     "label": "droid/analyze",
     "command": "droid",
-    "args": ["exec", "Analyze the current file and provide insights: $ZED_FILE"],
+    "args": ["exec", "Analyze the current file: $ZED_FILE"],
     "use_new_terminal": true,
     "allow_concurrent_runs": true,
     "reveal": "always"
@@ -215,7 +222,7 @@
   {
     "label": "droid/review",
     "command": "droid",
-    "args": ["exec", "--auto", "low", "Review the code in $ZED_FILE for potential issues, best practices, and improvements"],
+    "args": ["exec", "--auto", "low", "Review $ZED_FILE for issues and improvements"],
     "use_new_terminal": true,
     "allow_concurrent_runs": true,
     "reveal": "always"
@@ -223,7 +230,7 @@
   {
     "label": "droid/fix",
     "command": "droid",
-    "args": ["exec", "--auto", "medium", "Fix issues, format code, and improve $ZED_FILE"],
+    "args": ["exec", "--auto", "medium", "Fix issues in $ZED_FILE"],
     "use_new_terminal": true,
     "allow_concurrent_runs": false,
     "reveal": "always"
@@ -231,7 +238,7 @@
   {
     "label": "droid/test",
     "command": "droid",
-    "args": ["exec", "--auto", "medium", "Run tests for the current project and fix any failures"],
+    "args": ["exec", "--auto", "medium", "Run tests and fix failures"],
     "cwd": "$ZED_WORKTREE_ROOT",
     "use_new_terminal": true,
     "allow_concurrent_runs": false,
@@ -240,7 +247,7 @@
   {
     "label": "droid/docs",
     "command": "droid",
-    "args": ["exec", "--auto", "low", "Add documentation and comments to $ZED_FILE"],
+    "args": ["exec", "--auto", "low", "Add documentation to $ZED_FILE"],
     "use_new_terminal": true,
     "allow_concurrent_runs": true,
     "reveal": "always"
@@ -248,7 +255,7 @@
   {
     "label": "droid/refactor",
     "command": "droid",
-    "args": ["exec", "--auto", "medium", "Refactor $ZED_FILE to improve code quality and maintainability"],
+    "args": ["exec", "--auto", "medium", "Refactor $ZED_FILE"],
     "use_new_terminal": true,
     "allow_concurrent_runs": false,
     "reveal": "always"
@@ -262,6 +269,8 @@
     "allow_concurrent_runs": true,
     "reveal": "always"
   },
+  */
+  
   {
     "label": "php/run",
     "command": "php",
@@ -865,6 +874,89 @@
     "label": "security/install-tools",
     "command": "sh",
     "args": ["-c", "echo 'Install security tools:\\nsudo pacman -S gdb strace ltrace radare2 nmap openbsd-netcat wireshark-qt binwalk\\n\\nOptional (AUR):\\nyay -S ghidra rizin-cutter foremost metasploit'"],
+    "use_new_terminal": true,
+    "allow_concurrent_runs": true,
+    "reveal": "always"
+  },
+  {
+    "label": "security/ports-local",
+    "command": "sh",
+    "args": ["-c", "ss -tuln | grep LISTEN"],
+    "use_new_terminal": true,
+    "allow_concurrent_runs": true,
+    "reveal": "always"
+  },
+  {
+    "label": "security/ports-all",
+    "command": "sh",
+    "args": ["-c", "ss -tulnap"],
+    "use_new_terminal": true,
+    "allow_concurrent_runs": true,
+    "reveal": "always"
+  },
+  {
+    "label": "security/processes",
+    "command": "sh",
+    "args": ["-c", "ps aux --sort=-%cpu | head -50"],
+    "use_new_terminal": true,
+    "allow_concurrent_runs": true,
+    "reveal": "always"
+  },
+  {
+    "label": "security/network-connections",
+    "command": "sh",
+    "args": ["-c", "ss -tunap"],
+    "use_new_terminal": true,
+    "allow_concurrent_runs": true,
+    "reveal": "always"
+  },
+  {
+    "label": "git/status",
+    "command": "git",
+    "args": ["status", "-sb"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": true
+  },
+  {
+    "label": "git/diff",
+    "command": "git",
+    "args": ["diff"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": true,
+    "allow_concurrent_runs": true,
+    "reveal": "always"
+  },
+  {
+    "label": "git/diff-staged",
+    "command": "git",
+    "args": ["diff", "--cached"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": true,
+    "allow_concurrent_runs": true,
+    "reveal": "always"
+  },
+  {
+    "label": "git/log-graph",
+    "command": "git",
+    "args": ["log", "--oneline", "--graph", "--decorate", "--all", "-20"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": true,
+    "allow_concurrent_runs": true,
+    "reveal": "always"
+  },
+  {
+    "label": "system/disk-usage",
+    "command": "sh",
+    "args": ["-c", "df -h | grep -E '^/dev|Filesystem'"],
+    "use_new_terminal": true,
+    "allow_concurrent_runs": true,
+    "reveal": "always"
+  },
+  {
+    "label": "system/memory",
+    "command": "sh",
+    "args": ["-c", "free -h"],
     "use_new_terminal": true,
     "allow_concurrent_runs": true,
     "reveal": "always"

@@ -4,7 +4,16 @@
     "bindings": {
       "cmd-alt-l": "editor::Format",
       "cmd-shift-r": "editor::Rename",
-      "cmd-d": "editor::DuplicateLineDown"
+      "cmd-d": "editor::DuplicateLineDown",
+      "cmd-shift-a": "editor::SelectAll",
+      "cmd-/": "editor::ToggleComments",
+      "cmd-p": "file_finder::Toggle",
+      "alt-up": "editor::MoveLineUp",
+      "alt-down": "editor::MoveLineDown",
+      "cmd-k cmd-i": "editor::Hover",
+      "f12": "editor::GoToDefinition",
+      "shift-f12": "editor::GoToTypeDefinition",
+      "cmd-shift-o": "outline::Toggle"
     }
   },
   {
@@ -16,12 +25,15 @@
       "cmd-alt-r": ["task::Spawn", { "task_name": "r/rust" }],
       "cmd-t": "workspace::ToggleBottomDock",
       "cmd-shift-t": "workspace::NewTerminal",
-      "cmd-shift-d": ["task::Spawn", { "task_name": "droid/analyze" }],
-      "cmd-alt-d": ["task::Spawn", { "task_name": "droid/review" }],
-      "cmd-ctrl-d": ["task::Spawn", { "task_name": "droid/fix" }],
+      // AI Coding Agent (Optional - requires Droid CLI)
+      // Uncomment after installing: https://factory.sh
+      // "cmd-shift-d": ["task::Spawn", { "task_name": "droid/analyze" }],
+      // "cmd-alt-d": ["task::Spawn", { "task_name": "droid/review" }],
+      // "cmd-ctrl-d": ["task::Spawn", { "task_name": "droid/fix" }],
       "cmd-shift-s": ["task::Spawn", { "task_name": "laravel/serve" }],
       "cmd-shift-m": ["task::Spawn", { "task_name": "laravel/migrate" }],
       "cmd-shift-p": ["task::Spawn", { "task_name": "php/run" }],
+      "cmd-shift-i": "editor::Format",
       "cmd-alt-t": ["task::Spawn", { "task_name": "laravel/test" }],
       "cmd-alt-i": ["task::Spawn", { "task_name": "laravel/tinker" }],
       "cmd-shift-y": ["task::Spawn", { "task_name": "python/test" }],
@@ -38,7 +50,11 @@
       "cmd-shift-x": ["task::Spawn", { "task_name": "binary/strings" }],
       "cmd-alt-g": ["task::Spawn", { "task_name": "debug/gdb-start" }],
       "cmd-alt-h": ["task::Spawn", { "task_name": "binary/hash-all" }],
-      "cmd-ctrl-o": ["task::Spawn", { "task_name": "binary/objdump-disasm" }]
+      "cmd-ctrl-o": ["task::Spawn", { "task_name": "binary/objdump-disasm" }],
+      "cmd-shift-l": ["task::Spawn", { "task_name": "security/ports-local" }],
+      "cmd-shift-n": ["task::Spawn", { "task_name": "security/network-connections" }],
+      "cmd-shift-g": ["task::Spawn", { "task_name": "git/status" }],
+      "cmd-alt-shift-g": ["task::Spawn", { "task_name": "git/log-graph" }]
     }
   }
 ]

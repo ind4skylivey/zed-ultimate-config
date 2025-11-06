@@ -15,7 +15,7 @@
   - [Python](#python)
   - [Rust](#rust)
   - [Security/Reverse Engineering](#securityreverse-engineering)
-- [DROID AI Integration](#droid-ai-integration)
+- [AI Integration (Optional)](#ai-integration-optional)
 - [Keybindings Reference](#keybindings-reference)
 - [Tasks Reference](#tasks-reference)
 - [Snippets Reference](#snippets-reference)
@@ -34,7 +34,7 @@ This is a fully-configured professional development environment for Zed IDE, opt
 - **Modern Python development** (with proper venv workflow)
 - **Systems programming** (Rust)
 - **Security research** (Reverse engineering, malware analysis, red team operations)
-- **AI-assisted coding** (DROID integration)
+- **AI-assisted coding** (Ollama + Droid integration)
 
 ### Key Features
 
@@ -45,7 +45,7 @@ This is a fully-configured professional development environment for Zed IDE, opt
 ✅ **3 code formatters** with format-on-save  
 ✅ **15+ security tools** for binary analysis and RE  
 ✅ **Venv-aware** Python workflow (professional best practice)  
-✅ **DROID AI** integration with 3 autonomy levels  
+✅ **Dual AI** integration: Local LLM (Ollama) + Coding agents (Droid)  
 
 ---
 
@@ -106,10 +106,13 @@ sudo pacman -S gdb strace ltrace radare2 nmap openbsd-netcat wireshark-qt binwal
 yay -S ghidra rizin-cutter foremost metasploit
 ```
 
-#### DROID AI
+#### AI Integration (Optional)
 ```bash
-# Already installed at: ~/.local/bin/droid
-# Version: 0.22.3
+# Ollama - Local LLM for code completion
+# Install: curl -fsSL https://ollama.ai/install.sh | sh
+
+# Droid - Coding agent for automation
+# Install: curl -fsSL https://factory.sh/install | sh
 ```
 
 ### Install This Configuration
@@ -417,47 +420,100 @@ See `PYTHON_VENV_WORKFLOW.md` for complete guide.
 
 ---
 
-## 🤖 DROID AI Integration
+## 🤖 AI Integration (Optional)
 
-**Version:** 0.22.3  
-**Location:** `~/.local/bin/droid`
+### Supported AI Systems
 
-### Configured Agents
+This configuration supports two complementary AI approaches:
 
-Three DROID agents with different autonomy levels:
+1. **Ollama (Local LLM)** - Code completion and inline suggestions
+2. **Droid (Coding Agent)** - Multi-file operations and automation
 
-1. **droid-readonly** - Read-only analysis (safest)
-2. **droid** - Medium autonomy (development tasks)
-3. **droid-high** - High autonomy (production operations)
+### 1️⃣ Ollama Configuration
 
-### Tasks (7)
+**Purpose:** Real-time code completion, inline suggestions
 
-- `droid/analyze` - Analyze current file
-- `droid/review` - Code review with best practices
+```json
+"language_models": {
+  "ollama": {
+    "api_url": "http://localhost:11434",
+    "available_models": [
+      {
+        "name": "qwen2.5-coder:14b",
+        "max_tokens": 8192,
+        "context_length": 32000
+      },
+      {
+        "name": "codellama:13b",
+        "max_tokens": 4096,
+        "context_length": 16000
+      }
+    ]
+  }
+}
+```
+
+**Setup:**
+```bash
+# Install Ollama
+curl -fsSL https://ollama.ai/install.sh | sh
+
+# Pull models
+ollama pull qwen2.5-coder:14b
+ollama pull codellama:13b
+```
+
+### 2️⃣ Droid Configuration
+
+**Purpose:** Multi-file operations, testing, autonomous tasks
+
+```json
+"agent_servers": {
+  "droid": {
+    "command": "droid",
+    "args": ["exec", "--auto", "medium"],
+    "env": {
+      "FACTORY_API_KEY": "${FACTORY_API_KEY}"
+    }
+  }
+}
+```
+
+**Setup:**
+```bash
+# Install Droid CLI
+curl -fsSL https://factory.sh/install | sh
+
+# Configure API key in environment
+export FACTORY_API_KEY="your_key_here"
+```
+
+### Droid Tasks (7)
+
+- `droid/analyze` - File analysis with insights
+- `droid/review` - Code review and best practices
 - `droid/fix` - Fix issues and improve code
 - `droid/test` - Run tests and fix failures
-- `droid/docs` - Add documentation
-- `droid/refactor` - Refactor for quality
-- `droid/interactive` - Start interactive session
+- `droid/docs` - Generate documentation
+- `droid/refactor` - Improve code quality
+- `droid/interactive` - Interactive AI session
 
-### Keybindings
-
-- `Cmd+Shift+D` - Analyze current file
-- `Cmd+Alt+D` - Review code
-- `Cmd+Ctrl+D` - Fix issues
-
-### Usage
+### Usage Examples
 
 ```bash
-# Analyze a file
+# Code analysis
 droid "analyze this authentication system"
 
-# Review code with changes
-droid exec --auto low "review this for security issues"
+# Security review
+droid exec --auto low "review for security issues"
 
 # Fix and test
 droid exec --auto medium "fix bugs and run tests"
 ```
+
+**Resources:**
+- Ollama: https://ollama.ai
+- Droid/Factory: https://docs.factory.ai
 
 ---
 
@@ -520,12 +576,12 @@ droid exec --auto medium "fix bugs and run tests"
 | `Cmd+Alt+H` | binary/hash-all | Calculate hashes |
 | `Cmd+Ctrl+O` | binary/objdump-disasm | Disassemble |
 
-#### DROID AI
+#### AI Coding Agent (Optional)
 | Keybinding | Task | Description |
 |------------|------|-------------|
-| `Cmd+Shift+D` | droid/analyze | Analyze file |
-| `Cmd+Alt+D` | droid/review | Review code |
-| `Cmd+Ctrl+D` | droid/fix | Fix issues |
+| `Cmd+Shift+D` | droid/analyze | Analyze file (requires Droid) |
+| `Cmd+Alt+D` | droid/review | Review code (requires Droid) |
+| `Cmd+Ctrl+D` | droid/fix | Fix issues (requires Droid) |
 
 ---
 
@@ -579,10 +635,11 @@ droid exec --auto medium "fix bugs and run tests"
 - `exploit/generate-pattern`, `exploit/find-offset`
 - `forensics/binwalk`, `forensics/foremost`
 
-#### DROID AI (7 tasks)
+#### AI Coding Agent (7 tasks - Optional)
 - `droid/analyze`, `droid/review`, `droid/fix`
 - `droid/test`, `droid/docs`, `droid/refactor`
 - `droid/interactive`
+- Requires Droid CLI installation
 
 #### Utility (1 task)
 - `security/install-tools` - Show installation commands
@@ -697,8 +754,9 @@ droid exec --auto medium "fix bugs and run tests"
 #### Hashing
 - ✅ md5sum, sha1sum, sha256sum
 
-### AI Assistant
-- ✅ DROID 0.22.3 - Factory AI coding agent
+### AI Integration (Optional)
+- ✅ Ollama - Local LLM for code completion
+- ✅ Droid - Coding agent for automation
 
 ---
 
@@ -920,7 +978,7 @@ python3 -m json.tool ~/.config/zed/keymap.json
 ls -lh ~/.config/zed/*.json
 
 # Check tool installations
-which php composer python3 black pytest rustc cargo gdb radare2 nmap droid
+which php composer python3 black pytest rustc cargo gdb radare2 nmap
 
 # Test formatters
 php-cs-fixer --version
@@ -1029,7 +1087,14 @@ objdump -d sample.bin
 radare2 -A sample.bin
 ```
 
-### DROID AI Usage
+### AI Integration Usage (Optional)
+
+**Ollama (Local LLM):**
+- Automatically provides inline completions
+- No manual invocation needed
+- Works with any coding model
+
+**Droid (Coding Agent):**
 
 ✅ **Start with analysis mode**
 ```bash
@@ -1044,12 +1109,6 @@ droid exec --auto low "review this authentication system"
 ✅ **Use medium for development**
 ```bash
 droid exec --auto medium "fix bugs and run tests"
-```
-
-✅ **Never use high autonomy on production code**
-```bash
-# Only use in isolated dev environments
-droid exec --auto high "deploy to staging"
 ```
 
 ### General Workflow
@@ -1127,9 +1186,9 @@ composer global update
 - Ghidra: https://ghidra-sre.org
 - nmap: https://nmap.org/book
 
-**DROID:**
-- Factory Docs: https://docs.factory.ai
-- DROID CLI: https://docs.factory.ai/factory-cli
+**AI Integration:**
+- Ollama: https://ollama.ai
+- Droid/Factory: https://docs.factory.ai
 
 ---
 
@@ -1148,7 +1207,7 @@ composer global update
 | Format | `Cmd+Alt+L` | Auto on save |
 | Lint | `Cmd+Ctrl+L` | Task: */lint |
 | Build | `Cmd+Shift+B` | Task: rust/build |
-| Analyze (AI) | `Cmd+Shift+D` | Task: droid/analyze |
+| AI Analyze | `Cmd+Shift+D` | Task: droid/analyze (optional) |
 | Hex Dump | `Cmd+Shift+H` | Task: binary/hexdump |
 | Strings | `Cmd+Shift+X` | Task: binary/strings |
 | Debug | `Cmd+Alt+G` | Task: debug/gdb-start |
@@ -1228,7 +1287,7 @@ Feel free to customize:
 - ✅ 3 LSP servers configured
 - ✅ 3 formatters with auto-format
 - ✅ 15+ security tools integration
-- ✅ DROID AI integration
+- ✅ Dual AI integration (Ollama + Droid)
 - ✅ Professional Python venv workflow
 - ✅ Complete documentation
 
@@ -1242,7 +1301,7 @@ You now have a **production-ready, professional development environment** that s
 - 🐍 **Modern Python development** (proper venv workflow)
 - 🦀 **Systems programming** (Rust)
 - 🔐 **Security research** (RE, malware analysis, red team)
-- 🤖 **AI-assisted coding** (DROID)
+- 🤖 **AI-assisted coding** (Ollama + Droid)
 
 **With:**
 - Professional best practices
