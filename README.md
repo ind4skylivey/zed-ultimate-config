@@ -1,3 +1,6 @@
+
+<img width="2048" height="512" alt="image-16" src="https://github.com/user-attachments/assets/da163864-7aab-44ca-9ad0-91148d2465df" />
+
 <div align="center">
 
 # ⚡ Zed Ultimate Config
